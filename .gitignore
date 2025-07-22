@@ -1,1 +1,4 @@
-œ
+server/.venv
+db/flyway.conf
+server/.DS_Store
+server/__pycache__/
