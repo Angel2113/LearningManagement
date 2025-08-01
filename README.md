@@ -11,7 +11,42 @@ Clone this repository
 
 ## Usage 
 
+## Features
 
+### Must How
+
+- Python Backend (Fast API) using JWT
+- User CRUD
+- Sessions CRUD
+- Goals CRUD
+- Swagger documentation
+- Front-End (React)
+- Goals Form (CRUD)
+- Sessions
+- Progress dashboard
+
+### Should Have
+
+- Rol management (Users/ Admin / Coach )
+- Testing
+- Comments
+- Docker
+- Look for available resources
+
+### Could Have
+
+- IA suggestions
+- Push Notifications
+- Calendar
+- Profile edit section
+
+### Won’t Have
+
+- Mobile version
+- Chat
+
+
+## DB Diagram
 ```mermaid
 
 erDiagram
@@ -45,6 +80,7 @@ erDiagram
     USERS ||--o{ RECOMMENDATIONS : receives
 ```
 
+## App diagram
 ```mermaid
 flowchart TD
     subgraph Frontend [React + Shadcn UI]

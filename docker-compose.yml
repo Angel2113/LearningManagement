@@ -1,0 +1,35 @@
+services:
+#  app:
+#    build: ./frontend
+#    ports:
+#      - "80:3000"
+#    volumes:
+#      - ./frontend/src:/app/src
+  api:
+    build: ./backend
+    volumes:
+      - ./backend/app:/app/app
+  db:
+    image: postgres:14.18
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: User1
+      POSTGRES_PASSWORD: User1
+      POSTGRES_DB: LearningManagement
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  flyway:
+    image: flyway/flyway
+    depends_on:
+      - db
+    entrypoint: ["flyway", "migrate"]
+    environment:
+      - FLYWAY_URL=jdbc:postgresql://db:5432/LearningManagement
+      - FLYWAY_USER=User1
+      - FLYWAY_PASSWORD=
+    volumes:
+      - ./db/sql:/flyway/sql
+
+volumes:
+  postgres_data:
