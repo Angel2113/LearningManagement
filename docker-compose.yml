@@ -15,7 +15,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: User1
-      POSTGRES_PASSWORD: User1
+      POSTGRES_PASSWORD:
       POSTGRES_DB: LearningManagement
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -27,7 +27,7 @@ services:
     environment:
       - FLYWAY_URL=jdbc:postgresql://db:5432/LearningManagement
       - FLYWAY_USER=User1
-      - FLYWAY_PASSWORD=
+      - FLYWAY_PASSWORD=User1
     volumes:
       - ./db/sql:/flyway/sql
 
