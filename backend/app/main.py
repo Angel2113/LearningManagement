@@ -1,11 +1,34 @@
-from fastapi import FastAPI, Depends
+from typing import Annotated
+
+from fastapi import FastAPI, requests, Response, Header, Depends, HTTPException, Cookie
 from app.routes.users_router import users_router
-app = FastAPI()
+from app.routes.auth_router import auth_router
+from fastapi.security import OAuth2PasswordBearer
+from app.CRUD.user_crud import CRUDUser
+from app.utils.token_handler import encode_token
+from app.utils.JWT_middleware import JWTMiddleware
+from starlette.responses import JSONResponse
 
+app = FastAPI(
+    title="Learning Management",
+    description="Learning Management API Backend",
+    version="0.0.1"
+)
 app.include_router(users_router)
+app.include_router(auth_router)
 
-app.title = "Learning Management"
-app.version = "0.0.1"
+oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
+app.add_middleware(JWTMiddleware)
+
+def get_headers(
+        access_token: Annotated[str | None, Header()] = None,
+        user_role: Annotated[list[str] | None, Header()] = None
+):
+    if access_token != "secret-token":
+            raise HTTPException(status_code=401, detail="Unauthorized")
+    return {"MyHeader": "Hola"}
+
 @app.get("/", tags=["Home"])
-async def get_home():
-    return {"message": "Hello World"}
+async def get_home(headers: Annotated[dict, Depends(get_headers)]):
+    return {"access_token": headers['access_token'], "user_role": headers['user_role']}
+

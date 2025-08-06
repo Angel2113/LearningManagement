@@ -2,3 +2,9 @@ backend/.venv
 db/flyway.conf
 backend/.DS_Store
 backend/__pycache__/
+app/routes/__pycache__/
+app/schemas/__pycache__/
+app/utils/__pycache__/
+app/__pycache__/
+*.pyc
+.env
