@@ -15,7 +15,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: User1
-      POSTGRES_PASSWORD:
+      POSTGRES_PASSWORD: User1
       POSTGRES_DB: LearningManagement
     volumes:
       - postgres_data:/var/lib/postgresql/data
