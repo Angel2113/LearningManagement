@@ -1,10 +1,37 @@
+# FrontEnd
 backend/.venv
-db/flyway.conf
 backend/.DS_Store
 backend/__pycache__/
-app/routes/__pycache__/
-app/schemas/__pycache__/
-app/utils/__pycache__/
-app/__pycache__/
+backend/app/routes/__pycache__/
+backend/app/schemas/__pycache__/
+backend/app/utils/__pycache__/
+backend/app/__pycache__/
+backend/.env
 *.pyc
-.env
+
+# DB Migrations
+db/flyway.conf
+
+# FrontEnd
+frontend/logs
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+frontend/node_modules
+frontend/dist
+frontend/dist-ssr
+frontend/*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
