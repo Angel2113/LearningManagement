@@ -10,6 +10,7 @@ class UserCreate(BaseModel):
     username: str = Field(min_length=5, max_length=50)
     email: EmailStr = Field(min_length=5, max_length=50)
     password: str = Field(min_length=8, max_length=255)
+    password_confirmation: str = Field(min_length=8, max_length=255)
     role: str = Field(min_length=2, max_length=20)
 
 class UserRead(BaseModel):

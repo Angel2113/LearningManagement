@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/features/auth/components/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/models/Users.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/auth_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/users_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/schemas/user_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/user_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +121,11 @@
       <workItem from="1753918218038" duration="2210000" />
       <workItem from="1753995046146" duration="9923000" />
       <workItem from="1754617420777" duration="3625000" />
-      <workItem from="1754621397302" duration="2254000" />
+      <workItem from="1754621397302" duration="2484000" />
+      <workItem from="1754668259940" duration="4658000" />
+      <workItem from="1754673778084" duration="1917000" />
+      <workItem from="1754757645375" duration="3529000" />
+      <workItem from="1754857552156" duration="7527000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />

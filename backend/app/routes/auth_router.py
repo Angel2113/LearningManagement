@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from app.schemas.auth_schemas import Token
 from app.utils.password_hashing import hash_password, verify_password
-from app.CRUD.user_crud import CRUDUser
+from app.CRUD import user_crud
 from app.utils.token_handler import encode_token, decode_token
 
 auth_router = APIRouter(
@@ -16,7 +16,7 @@ auth_router = APIRouter(
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 def authenticate_user(username: str, password: str):
-    user = CRUDUser().get_user(username = username)
+    user = user_crud.get_user(username = username)
     if not user:
         return False
     if not verify_password(password, user.password_hash):
@@ -33,7 +33,7 @@ def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
     except:
         raise HTTPException(status_code=401, detail="Invalid token")
 
-@auth_router.post("/get_token", response_model=Token)
+@auth_router.post("/login", response_model=Token)
 async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     user = authenticate_user(form_data.username, form_data.password)
     if not user:

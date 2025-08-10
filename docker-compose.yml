@@ -1,35 +1,50 @@
 services:
-  app:
-    build: ./frontend
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./frontend/src:/app/src
-  api:
-    build: ./backend
-    volumes:
-      - ./backend/app:/app/app
   db:
     image: postgres:14.18
+    container_name: postgres_db
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: User1
-      POSTGRES_PASSWORD: User1
-      POSTGRES_DB: LearningManagement
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
   flyway:
     image: flyway/flyway
     depends_on:
       - db
-    entrypoint: ["flyway", "migrate"]
+    entrypoint: [ "flyway", "migrate" ]
+    env_file:
+      - .env
     environment:
-      - FLYWAY_URL=jdbc:postgresql://db:5432/LearningManagement
-      - FLYWAY_USER=User1
-      - FLYWAY_PASSWORD=User1
+      - FLYWAY_URL=${FLYWAY_URL}
+      - FLYWAY_USER=${POSTGRES_USER}
+      - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - ./db/sql:/flyway/sql
+  api:
+    build:
+      context: ./backend
+    container_name: fastapi_app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app
+    depends_on:
+      - db
+  app:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/:/src
+    depends_on:
+      - api
+
 
 volumes:
   postgres_data:

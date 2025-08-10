@@ -3,6 +3,7 @@ from fastapi import Request, HTTPException, FastAPI, Response, status
 from app.utils.token_handler import decode_token
 from starlette.responses import JSONResponse
 
+EXCLUDE_PATHS = ["/home", "/auth/login", "/docs"]
 
 class JWTMiddleware(BaseHTTPMiddleware):
 
@@ -11,6 +12,11 @@ class JWTMiddleware(BaseHTTPMiddleware):
 
     async def dispatch(self, request: Request, call_next) -> Response | JSONResponse:
         auth_header = request.headers.get("Authorization")
+
+        # Exclude paths from authentication
+        if request.url.path in EXCLUDE_PATHS:
+            return await call_next(request)
+
         if not auth_header or not auth_header.startswith("Bearer "):
             return JSONResponse(status_code=401, content={"detail": "Unauthorized - Missing token"})
 
