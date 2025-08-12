@@ -68,7 +68,17 @@ def get_all_users(db: Session):
     :param db: Database session
     :return:
     """
-    return db.query(Users).all()
+    users = db.query(Users).with_entities(Users.id, Users.username, Users.email, Users.role).all()
+    return [
+            {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "role": user.role
+            }
+            for user in users
+        ]
+
 
 def update_user(db: Session, user_id: str, updates: UserUpdate):
     user = get_user(db = db, user_id = user_id)

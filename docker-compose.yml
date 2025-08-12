@@ -10,6 +10,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
   flyway:
     image: flyway/flyway
     depends_on:
@@ -23,6 +25,8 @@ services:
       - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - ./db/sql:/flyway/sql
+    networks:
+      - app_network
   api:
     build:
       context: ./backend
@@ -35,6 +39,8 @@ services:
       - ./backend/app:/app/app
     depends_on:
       - db
+    networks:
+      - app_network
   app:
     build:
       context: ./frontend
@@ -44,7 +50,14 @@ services:
       - ./frontend/:/src
     depends_on:
       - api
+    networks:
+      - app_network
 
 
 volumes:
   postgres_data:
+
+networks:
+  app_network:
+    driver: bridge
+

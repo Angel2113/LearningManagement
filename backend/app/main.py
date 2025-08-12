@@ -8,6 +8,7 @@ from app.CRUD import user_crud
 from app.utils.token_handler import encode_token
 from app.utils.JWT_middleware import JWTMiddleware
 from starlette.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Learning Management",
@@ -19,6 +20,14 @@ app.include_router(auth_router)
 
 oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
 #app.add_middleware(JWTMiddleware)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 def get_headers(
         access_token: Annotated[str | None, Header()] = None,
