@@ -9,6 +9,11 @@ from app.CRUD import user_crud
 from sqlalchemy.orm import Session
 from app.utils.token_handler import encode_token, decode_token
 from app.database import get_db
+import logging
+
+logger = logging.getLogger('uvicorn.error')
+logger.setLevel(logging.DEBUG)
+
 
 auth_router = APIRouter(
     prefix="/auth",
@@ -36,8 +41,8 @@ def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
         raise HTTPException(status_code=401, detail="Invalid token")
 
 @auth_router.post("/login", response_model=Token)
-async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: Session = Depends(get_db)):
-    user = authenticate_user(db, form_data.username, form_data.password)
+async def login(username: str, password: str, db: Session = Depends(get_db)):
+    user = authenticate_user(db, username, password)
     if not user:
         raise HTTPException(status_code=400, detail="Invalid username or password")
     token = encode_token({
@@ -46,6 +51,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: 
         "rol": user.role,
         "expiration": str(datetime.utcnow() + timedelta(minutes=30))
     })
+    logger.info(f"Login successful for user {token}")
     response = JSONResponse(content={"message": "Login successful"})
     response.set_cookie(
         key="access_token",  # Cookie Name
@@ -53,7 +59,9 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db: 
         httponly=True,  # Access only by the server
         samesite="Strict"
     )
-    return response
+    return { "access_token": token, "token_type": "bearer" }
+
+
 
 @auth_router.post("/logout")
 async def logout():

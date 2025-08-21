@@ -1,4 +1,4 @@
-FROM node
+FROM node:current-alpine3.22
 
 #RUN apt-get update
 

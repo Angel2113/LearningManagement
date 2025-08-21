@@ -7,9 +7,8 @@ from fastapi.security import OAuth2PasswordBearer
 from app.CRUD import user_crud
 from app.utils.token_handler import encode_token
 from app.utils.JWT_middleware import JWTMiddleware
-from starlette.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi.responses import JSONResponse
 app = FastAPI(
     title="Learning Management",
     description="Learning Management API Backend",
