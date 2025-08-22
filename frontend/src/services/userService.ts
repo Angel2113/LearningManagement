@@ -1,10 +1,11 @@
 // src/services/userService.ts
 import api from "./api";
 import { User } from "../types/User";
+import instance from "@/services/instance.tsx";
 
 // Get All Users
 export const getAllUsers = async (): Promise<User[]> => {
-    const response = await api.get("/all_users");
+    const response = await instance.get("/all_users");
     return response.data;
 };
 

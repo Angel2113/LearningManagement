@@ -7,11 +7,11 @@ const instance = axios.create({
     headers: { "Content-Type" : "application/json" }
 });
 
-instance.interceptors.request.use(
-  (config) => {
-      console.log('intercepting');
+instance.interceptors.request.use((config) => {
+    console.log('intercepting');
     const token = TokenUtils.getJWT();
-    if (token && config.headers) {
+    console.log('token: ' + token);
+    if (token) {
       console.log('adding-header');
       config.headers.Authorization = "Bearer " + token;
     }

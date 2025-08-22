@@ -18,7 +18,7 @@ app.include_router(users_router)
 app.include_router(auth_router)
 
 oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
-#app.add_middleware(JWTMiddleware)
+app.add_middleware(JWTMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

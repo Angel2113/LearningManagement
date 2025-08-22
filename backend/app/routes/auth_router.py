@@ -54,14 +54,6 @@ async def login(user: UserRequest, db: Session = Depends(get_db)):
         "rol": user.role,
         "expiration": str(datetime.utcnow() + timedelta(minutes=30))
     })
-    logger.info(f"Login successful for user {token}")
-    response = JSONResponse(content={"message": "Login successful"})
-    response.set_cookie(
-        key="access_token",  # Cookie Name
-        value=f"Bearer {token}",
-        httponly=True,  # Access only by the server
-        samesite="Strict"
-    )
     return { "access_token": token, "token_type": "bearer" }
 
 

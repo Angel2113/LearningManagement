@@ -2,6 +2,7 @@ import {useState} from "react";
 import {login} from "../../services/auth";
 import {useNavigate} from "react-router-dom";
 import './Login.model.css';
+import {useAuthStore} from "@/auth/store/auth.store.tsx";
 
 
 export default function LoginPage() {
@@ -10,21 +11,31 @@ export default function LoginPage() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { login } = useAuthStore()
 
     async function handleSubmit(e) {
         e.preventDefault();
         setError("");
-        try {
-            const data = await login(username, password);
-            localStorage.setItem("token", data.access_token);
-
+        const isValid = await login(username, password)
+        if( isValid ){
             navigate('/home');
+        } else {
+            setError("Invalid credentials");
+        }
+        /*
+        try {
+            //const data = await login(username, password);
+            //localStorage.setItem("token", data.access_token);
+            //login(username, password);
         } catch (err) {
             setError("Invalid credentials");
         }
+        */
+
     }
 
     return (
+
         <main className="form-signin w-100 m-auto d-flex align-items-center justify-content-center vh-100 bg-light">
 
             <div className="container mt-5">

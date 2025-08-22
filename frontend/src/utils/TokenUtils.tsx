@@ -1,15 +1,15 @@
 import { jwtDecode } from "jwt-decode";
 
 const getJWT = () => {
-    return localStorage.getItem("jwt") ?? "";
+    return localStorage.getItem("token") ?? "";
 }
 
 const decodeJWT = (jwt: any) => {
-    return jwtDecode(jwt);
+    return jwtDecode("token");
 }
 
 const logout = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
 }
 
 const isTokenValid = () => {
@@ -17,7 +17,7 @@ const isTokenValid = () => {
     if(jwt) {
         return isTokenExpired(jwt);
     } else {
-        console.log("JWT is expired");
+        console.log("token is expired");
         return false;
     }
 }

@@ -26,10 +26,9 @@ def encode_token(payload: dict) -> str:
     token = jwt.encode(payload, JWT_SECRET, algorithm=ALGORITHM)
     return token
 
-def decode_token(request:Request ) -> dict:
+def decode_token(token: str ) -> dict:
     ## Preview version data = jwt.decode(token, JWT_SECRET, algorithms=[ALGORITHM])
     ## return data
-    token = request.cookies.get("access_token")
     if not token:
         raise HTTPException(status_code=401, detail="No access token")
     try:

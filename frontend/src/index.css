@@ -1,7 +1,4 @@
 html,
-body {
-  height: 80%;
-}
 
 .form-signin {
   max-width: 330px;
@@ -22,4 +19,9 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+h1, h2, h5 {
+    font-weight: 600;
+    color: #f5f7fa;
 }
