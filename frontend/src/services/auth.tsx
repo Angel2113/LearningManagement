@@ -4,15 +4,14 @@ import axios from "axios";
 const baseURL = "http://localhost:8000";
 
 export async function login(username: string, password: string) {
-
-    const params = new URLSearchParams();
-    params.append('username', username);
-    params.append('password', password);
-
     try {
-        const response = await axios.post(`${baseURL}/auth/login`,  params, {
+        const response = await axios.post(`${baseURL}/auth/login`,
+            {
+                username: username,
+                password: password,
+            }, {
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
         });
         return response.data;

@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.model.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/auth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/TokenUtils.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/auth/auth.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.model.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.model.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/auth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/instance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +21,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SQL File" />
-        <option value="Python Script" />
         <option value="Dockerfile" />
         <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -95,11 +78,11 @@
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/app/schemas" />
       <recent name="$PROJECT_DIR$/frontend/src/admin/components" />
       <recent name="$PROJECT_DIR$/backend/app" />
       <recent name="$PROJECT_DIR$/backend/app/models" />
       <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/db/sql" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -151,6 +134,9 @@
       <workItem from="1755657656934" duration="975000" />
       <workItem from="1755732893810" duration="1903000" />
       <workItem from="1755737913100" duration="11781000" />
+      <workItem from="1755751989253" duration="683000" />
+      <workItem from="1755798675557" duration="803000" />
+      <workItem from="1755799650241" duration="12393000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />

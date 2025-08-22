@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi.responses import JSONResponse
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from app.schemas.auth_schemas import Token
+from app.schemas.auth_schemas import Token, UserRequest
 from app.utils.password_hashing import hash_password, verify_password
 from app.CRUD import user_crud
 from sqlalchemy.orm import Session
@@ -40,9 +40,12 @@ def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
     except:
         raise HTTPException(status_code=401, detail="Invalid token")
 
+
+
+
 @auth_router.post("/login", response_model=Token)
-async def login(username: str, password: str, db: Session = Depends(get_db)):
-    user = authenticate_user(db, username, password)
+async def login(user: UserRequest, db: Session = Depends(get_db)):
+    user = authenticate_user(db, user.username, user.password)
     if not user:
         raise HTTPException(status_code=400, detail="Invalid username or password")
     token = encode_token({

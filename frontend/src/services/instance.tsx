@@ -9,6 +9,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   (config) => {
+      console.log('intercepting');
     const token = TokenUtils.getJWT();
     if (token && config.headers) {
       console.log('adding-header');

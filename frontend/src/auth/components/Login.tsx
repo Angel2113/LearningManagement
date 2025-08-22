@@ -25,38 +25,42 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="container mt-5">
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label>Username</label>
-                    <input
-                        className="form-control"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
+        <main className="form-signin w-100 m-auto d-flex align-items-center justify-content-center vh-100 bg-light">
 
-                <div className="mb-3">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
+            <div className="container mt-5">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-floating mb-3">
 
-                {error && (
-                    <div className="alert alert-danger" role="alert">
-                        {error}
-                    </div>)
-                }
+                        <input
+                            className="form-control"
+                            placeholder="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <label>Username</label>
+                    </div>
+                    <div className="form-floating mb-3">
 
-                <button className="btn btn-primary" type="submit">
-                    Login
-                </button>
-            </form>
-        </div>
+                        <input
+                            type="password"
+                            className="form-control"
+                            value={password}
+                            placeholder="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <label>Password</label>
+                    </div>
+                    {error && (
+                        <div className="alert alert-danger" role="alert">
+                            {error}
+                        </div>)
+                    }
+                    <button className="btn btn-primary" type="submit">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </main>
     );
 }
