@@ -79,8 +79,14 @@ def get_all_users(db: Session):
             for user in users
         ]
 
-
 def update_user(db: Session, user_id: str, updates: UserUpdate):
+    """
+    Update a user. (UPDATE)
+    :param db: Database session
+    :param user_id: User id
+    :param updates: Parameters to update
+    :return: a result message
+    """
     user = get_user(db = db, user_id = user_id)
     if not user:
         return {"message": "User not found"}
@@ -96,8 +102,14 @@ def update_user(db: Session, user_id: str, updates: UserUpdate):
     db.refresh(user)
     return {"message": "User updated successfully"}
 
-def delete_user(db: Session, user_id: str):
-    user = user = get_user(db = db, user_id = user_id)
+def delete_user(db: Session, user_id: str) -> dict:
+    """
+    Delete a user.
+    :param db: Database session
+    :param user_id: user id
+    :return: a result message
+    """
+    user = get_user(db = db, user_id = user_id)
     if not user:
         return {"message": "User not found"}
     db.delete(user)

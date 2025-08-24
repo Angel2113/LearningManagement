@@ -3,21 +3,24 @@ from typing import Annotated
 from fastapi import FastAPI, requests, Response, Header, Depends, HTTPException, Cookie
 from app.routes.users_router import users_router
 from app.routes.auth_router import auth_router
+from app.routes.goals_router import goals_router
 from fastapi.security import OAuth2PasswordBearer
 from app.CRUD import user_crud
 from app.utils.token_handler import encode_token
 from app.utils.JWT_middleware import JWTMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+
+
 app = FastAPI(
     title="Learning Management",
     description="Learning Management API Backend",
-    version="0.0.1"
+    version="0.0.2"
 )
 app.include_router(users_router)
 app.include_router(auth_router)
+app.include_router(goals_router)
 
-oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
+#oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
 app.add_middleware(JWTMiddleware)
 app.add_middleware(
     CORSMiddleware,

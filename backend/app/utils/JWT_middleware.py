@@ -2,9 +2,11 @@ from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoin
 from fastapi import Request, HTTPException, FastAPI, Response, status
 from app.utils.token_handler import decode_token
 from starlette.responses import JSONResponse
+from datetime import datetime
 import logging
 
 EXCLUDE_PATHS = ["/home", "/auth/login", "/docs", "/openapi.json"]
+TESTING_PATHS = ["/goals/get_all_goals/{user_id}", "/goals/get_all_goals/"]
 
 logger = logging.getLogger('uvicorn.error')
 logger.setLevel(logging.DEBUG)
@@ -28,7 +30,16 @@ class JWTMiddleware(BaseHTTPMiddleware):
         logger.info(f"Token: {token}")
         try:
             payload = decode_token(token)
-            #request.state.user = payload["username"]
+            logger.info(f"Payload: {payload}")
+            request.state.user = payload["username"]
+            request.state.user_id = payload["user_id"]
+            request.state.role = payload["role"]
+            exp_date = payload["expiration"]
+            current_time = datetime.now().isoformat()
+
+            if current_time > exp_date:
+                return JSONResponse(content="Unauthorized - Token expired", status_code=status.HTTP_401_UNAUTHORIZED)
+
             logger.info(f"Payload: {payload}")
         except Exception as e:
             return JSONResponse(content="Unauthorized - Invalid token", status_code=status.HTTP_401_UNAUTHORIZED)

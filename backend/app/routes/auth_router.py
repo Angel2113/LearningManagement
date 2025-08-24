@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
 from typing import Annotated
+
+from fastapi.security import HTTPBearer
 from fastapi.responses import JSONResponse
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -20,7 +22,8 @@ auth_router = APIRouter(
     tags=["Authentication"]
 )
 
-oauth2_bearer = OAuth2PasswordBearer(tokenUrl="auth/token")
+#oauth2_bearer = OAuth2PasswordBearer(tokenUrl="auth/token")
+security = HTTPBearer()
 
 def authenticate_user(db: Session, username: str, password: str):
     user = user_crud.get_user(db, username = username)
@@ -30,18 +33,21 @@ def authenticate_user(db: Session, username: str, password: str):
         return False
     return user
 
-def get_current_user(token: Annotated[str, Depends(oauth2_bearer)]):
+def get_current_user(token: Annotated[str, Depends(security)]):
     try:
         payload = decode_token(token)
         username: str = payload.get("username")
+        user_id: str = payload.get("user_id")
+        role: str = payload.get("role")
         if not username:
             raise HTTPException(status_code=401, detail="Invalid token")
-        return {'username': username}
+        return {
+            "username": username,
+            "user_id": user_id,
+            "role": role,
+        }
     except:
         raise HTTPException(status_code=401, detail="Invalid token")
-
-
-
 
 @auth_router.post("/login", response_model=Token)
 async def login(user: UserRequest, db: Session = Depends(get_db)):
@@ -49,14 +55,13 @@ async def login(user: UserRequest, db: Session = Depends(get_db)):
     if not user:
         raise HTTPException(status_code=400, detail="Invalid username or password")
     token = encode_token({
+        "user_id": str(user.id),
         "username": user.username,
         "email": user.email,
-        "rol": user.role,
-        "expiration": str(datetime.utcnow() + timedelta(minutes=30))
+        "role": user.role,
+        "expiration": (datetime.now() + timedelta(minutes=30)).isoformat()
     })
     return { "access_token": token, "token_type": "bearer" }
-
-
 
 @auth_router.post("/logout")
 async def logout():

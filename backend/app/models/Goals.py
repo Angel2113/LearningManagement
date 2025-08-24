@@ -1,6 +1,7 @@
 from ..database import Base
 from sqlalchemy import Column, String, DateTime, Date
 from sqlalchemy.dialects.postgresql import UUID
+from datetime import date
 import uuid
 
 class Goals(Base):
@@ -9,5 +10,7 @@ class Goals(Base):
     user_id = Column(UUID(as_uuid=True))
     description = Column(String(255))
     status = Column(String(20), default='pending')
+    eta = Column(String(20))
+    resources = Column(String(255))
     target_date = Column(Date)
-    create_at = Column(DateTime)
+    created_at = Column(DateTime, default=date.today())
