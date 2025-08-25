@@ -6,6 +6,7 @@ FROM node:current-alpine3.22
 WORKDIR /src/
 
 #Copy the app code
+COPY package*.json ./
 COPY . ./src/
 
 ENTRYPOINT ["sh", "-c"]

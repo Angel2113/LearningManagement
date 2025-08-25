@@ -34,7 +34,7 @@ const AdminNavBar = () => {
                         </div>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        <button className="nav-link disabled" href="#">Disabled</button>
                     </li>
                 </ul>
                 {/*
@@ -44,7 +44,7 @@ const AdminNavBar = () => {
                 </form>
                 */}
                 { token && (
-                    <button className="btn btn-outline-danger my-2 my-sm-0" oncli >Logout</button>
+                    <button className="btn btn-outline-danger my-2 my-sm-0" onClick={logout} >Logout</button>
                     )
                 }
 

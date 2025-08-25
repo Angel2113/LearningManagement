@@ -22,18 +22,7 @@ export default function LoginPage() {
         } else {
             setError("Invalid credentials");
         }
-        /*
-        try {
-            //const data = await login(username, password);
-            //localStorage.setItem("token", data.access_token);
-            //login(username, password);
-        } catch (err) {
-            setError("Invalid credentials");
-        }
-        */
-
     }
-
     return (
 
         <main className="form-signin w-100 m-auto d-flex align-items-center justify-content-center vh-100 bg-light">

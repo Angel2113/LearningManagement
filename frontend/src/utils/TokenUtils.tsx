@@ -4,12 +4,14 @@ const getJWT = () => {
     return localStorage.getItem("token") ?? "";
 }
 
-const decodeJWT = (jwt: any) => {
-    return jwtDecode("token");
+const decodeJWT = (jwt: string) => {
+    return jwtDecode(jwt);
 }
 
 const logout = () => {
+
     localStorage.removeItem("token");
+    window.location.href = '/login';
 }
 
 const isTokenValid = () => {
@@ -31,6 +33,7 @@ const isTokenExpired = (jwt: any) => {
 const TokenUtils = {
     getJWT,
     logout,
+    decodeJWT,
     isTokenValid,
     isTokenExpired
 }

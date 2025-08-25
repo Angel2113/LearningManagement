@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/admin/components/DeleteUserModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/admin/components/UpdateUserModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/Goal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/models/Goals.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Goals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/models/Users.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/routes/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/users_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminNavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/ProtectRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/ProtectRoutes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/instance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/TokenUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/TokenUtils.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +34,10 @@
       <list>
         <option value="SQL File" />
         <option value="Dockerfile" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="Python Script" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -144,7 +150,8 @@
       <workItem from="1755798675557" duration="803000" />
       <workItem from="1755799650241" duration="25084000" />
       <workItem from="1755922711237" duration="3695000" />
-      <workItem from="1755963568590" duration="18285000" />
+      <workItem from="1755963568590" duration="20107000" />
+      <workItem from="1756071575970" duration="16421000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
@@ -170,16 +177,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

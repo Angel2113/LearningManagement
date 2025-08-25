@@ -1,10 +1,8 @@
 from datetime import datetime, timedelta
 from typing import Annotated
-
 from fastapi.security import HTTPBearer
 from fastapi.responses import JSONResponse
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from app.schemas.auth_schemas import Token, UserRequest
 from app.utils.password_hashing import hash_password, verify_password
 from app.CRUD import user_crud
