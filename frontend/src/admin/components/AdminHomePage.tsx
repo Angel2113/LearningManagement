@@ -1,14 +1,17 @@
 import AdminNavBar from "@/admin/components/AdminNavBar.tsx";
-import {deleteUser, getAllUsers, updateUser} from "@/services/userService.ts";
+import {createUser, deleteUser, getAllUsers, updateUser} from "@/services/userService.ts";
 import {useEffect, useState} from "react";
 import {User} from "@/types/User";
 import {LucideUser} from "lucide-react";
-import {useAuthStore} from "@/auth/store/auth.store.tsx";
+import {AddUser} from "@/types/AddUser.ts";
 
 export const AdminHomePage = () => {
     const [users, setUsers] = useState<User[]>([]);
+    const [addUser, setAddUser] = useState<AddUser |  null>(null);
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [editedUser, setEditedUser] = useState<User | null>(null);
+
+    const [showAddModal, setShowAddModal] = useState(false)
     const [showUpdateModal, setShowUpdateModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -24,6 +27,19 @@ export const AdminHomePage = () => {
 
         fetchUsers();
     }, []);
+
+    const handleAddUser= (username: string) => {
+        console.log(`Adding user: ${username}`);
+        if(addUser) {
+            try {
+                const response = createUser(addUser);
+                setShowAddModal(false);
+            } catch (error) {
+                throw new Error('Error adding user');
+            }
+        }
+
+    };
 
     const handleUpdateUser = (username: string) => {
         console.log(`Updating user: ${username}`);
@@ -50,7 +66,7 @@ export const AdminHomePage = () => {
             } catch (err) {
                 throw new Error('Error deleting user');
             }
-        };
+        }
     };
 
 
@@ -66,7 +82,20 @@ export const AdminHomePage = () => {
                     <div
                         className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h4 className="mb-0">User List</h4>
-                        <button className="btn btn-sm btn-success">Add User</button>
+                        <button
+                            className="btn btn-sm btn-success"
+                            onClick={() =>{
+                                setAddUser({
+                                    username: "",
+                                    email: "",
+                                    role: "user",
+                                    password: "",
+                                    password_confirmation: ""
+                                } as AddUser)
+                                setShowAddModal(true)
+                            }}
+                            title="Add User"
+                        >Add User</button>
                     </div>
                     <ul className="list-group list-group-flush">
                         {users.map((u) => (
@@ -193,7 +222,7 @@ export const AdminHomePage = () => {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="email" className="form-label">
-                                            Username
+                                            Email
                                         </label>
                                         <input
                                             type="text"
@@ -236,6 +265,125 @@ export const AdminHomePage = () => {
                                         Cancel
                                     </button>
                                     <button className="btn btn-primary" onClick={handleUpdateUser}>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Add User Modal */}
+                {showAddModal && (
+                    <div className="modal show d-block" style={{ background: "rgba(0,0,0,0.5)" }}>
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title">Add User</h5>
+                                    <button
+                                        className="btn-close"
+                                        onClick={() => setShowAddModal(false)}
+                                    ></button>
+                                </div>
+                                <div className="modal-body">
+                                    <div className="mb-3">
+                                        <label htmlFor="username" className="form-label">
+                                            Username
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="username"
+                                            className="form-control"
+                                            value={addUser?.username || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,  // Copy properties from addUser on new user
+                                                    username: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="form-label">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="email"
+                                            className="form-control"
+                                            value={addUser?.email || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,  // Copy properties from editedUser in a new user
+                                                    email: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="role" className="form-label">
+                                            Role
+                                        </label>
+                                        <select
+                                            id="role"
+                                            className="form-select"
+                                            value={addUser?.role || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    role: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        >
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
+                                        </select>
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="role" className="form-label">
+                                            Password
+                                        </label>
+                                        <input
+                                            type="password"
+                                            id="password"
+                                            title="Password"
+                                            className="form-control"
+                                            value={ addUser?.password || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    password: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="role" className="form-label">
+                                            Confirmation Password
+                                        </label>
+                                        <input
+                                            type="confirm_password"
+                                            id="confirm_password"
+                                            title="confirm_password"
+                                            className="form-control"
+                                            value={ addUser?.password_confirmation || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    password_confirmation: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="modal-footer">
+                                    <button
+                                        className="btn btn-secondary"
+                                        onClick={() => setShowAddModal(false)}
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button className="btn btn-primary" onClick={handleAddUser}>
                                         Save Changes
                                     </button>
                                 </div>

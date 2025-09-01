@@ -1,7 +1,7 @@
 // src/services/userService.ts
-import api from "./api";
 import { User } from "../types/User";
 import instance from "@/services/instance.tsx";
+import {AddUser} from "@/types/AddUser.ts";
 
 // Get All Users
 export const getAllUsers = async (): Promise<User[]> => {
@@ -10,7 +10,7 @@ export const getAllUsers = async (): Promise<User[]> => {
 };
 
 // Create a new user
-export const createUser = async (user: User): Promise<User> => {
+export const createUser = async (user: AddUser): Promise<User> => {
     const response = await instance.post("/user", user);
     return response.data;
 };

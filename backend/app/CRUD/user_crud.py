@@ -26,7 +26,7 @@ def create_user(db: Session, user: UserCreate) -> dict:
     logger.info(f"User from db looking by email: {user_from_db}")
     if user_from_db: return {"message": "Email already exists"}
 
-    # Validate if password matches the confirmation password
+    # Validate if the password matches the confirmation password
     if user.password != user.password_confirmation:
         return {"message": "Passwords do not match"}
 

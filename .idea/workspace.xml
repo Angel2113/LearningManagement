@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/admin/components/DeleteUserModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/admin/components/UpdateUserModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/Goal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/AddUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/routes/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/ProtectRoutes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/ProtectRoutes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/instance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/TokenUtils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/TokenUtils.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +66,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Volumes/Externo/Developer/2025/LearningManagement/frontend/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -151,7 +138,12 @@
       <workItem from="1755799650241" duration="25084000" />
       <workItem from="1755922711237" duration="3695000" />
       <workItem from="1755963568590" duration="20107000" />
-      <workItem from="1756071575970" duration="16421000" />
+      <workItem from="1756071575970" duration="16584000" />
+      <workItem from="1756144984102" duration="720000" />
+      <workItem from="1756298612254" duration="84000" />
+      <workItem from="1756298699455" duration="3519000" />
+      <workItem from="1756350773314" duration="663000" />
+      <workItem from="1756738721682" duration="3301000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
