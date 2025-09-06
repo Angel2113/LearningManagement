@@ -14,7 +14,7 @@ logger.setLevel(logging.DEBUG)
 users_router = APIRouter()
 user_depencency = Annotated[dict, Depends(get_current_user)]
 
-@users_router.get("/user/{username}", tags=["Users"], dependencies=[Depends(security)])
+@users_router.get("/users/{username}", tags=["Users"], dependencies=[Depends(security)])
 async def get_user(username: user_depencency, db: Session = Depends(get_db)):
     """
     Get user by username (READ)
@@ -28,7 +28,7 @@ async def get_user(username: user_depencency, db: Session = Depends(get_db)):
     else:
         return {"message": "User not found"}
 
-@users_router.get("/all_users", tags=["Users"], dependencies=[Depends(security)])
+@users_router.get("/users", tags=["Users"], dependencies=[Depends(security)])
 async def get_all_users(db: Session = Depends(get_db)):
     """
     Get all users (READ)
@@ -37,7 +37,7 @@ async def get_all_users(db: Session = Depends(get_db)):
     """
     return user_crud.get_all_users(db)
 
-@users_router.post("/user", tags=["Users"], dependencies=[Depends(security)])
+@users_router.post("/users", tags=["Users"], dependencies=[Depends(security)])
 async def create_user(user: UserCreate, db: Session = Depends(get_db)):
     """
     Create a new user (CREATE)
@@ -47,7 +47,7 @@ async def create_user(user: UserCreate, db: Session = Depends(get_db)):
     """
     return user_crud.create_user(db = db, user = user)
 
-@users_router.put("/user/{user_id}", tags=["Users"], dependencies=[Depends(security)])
+@users_router.put("/users/{user_id}", tags=["Users"], dependencies=[Depends(security)])
 async def update_user(user_id: str, updates: UserUpdate, db: Session = Depends(get_db)):
     """
     Update a user (UPDATE)
@@ -58,7 +58,7 @@ async def update_user(user_id: str, updates: UserUpdate, db: Session = Depends(g
     """
     return user_crud.update_user(db = db, user_id = user_id, updates = updates)
 
-@users_router.delete("/user/{user_id}", tags=["Users"], dependencies=[Depends(security)])
+@users_router.delete("/users/{user_id}", tags=["Users"], dependencies=[Depends(security)])
 async def delete_user(user_id: str, db: Session = Depends(get_db)):
     """
     Delete a user (DELETE)
@@ -67,3 +67,17 @@ async def delete_user(user_id: str, db: Session = Depends(get_db)):
     :return: A result message
     """
     return user_crud.delete_user(db = db, user_id = user_id)
+
+@users_router.post("/register", tags=["Users"])
+async def register_users(user: UserCreate, db: Session = Depends(get_db)):
+    """
+    Create a new user (CREATE)
+    :param user: User Schema
+    :param db: Database session
+    :return: A result message
+    """
+    no_users = len(user_crud.get_all_users(db))
+    if no_users == 0:
+        user.role = "admin"
+
+    return user_crud.create_user(db = db, user = user)

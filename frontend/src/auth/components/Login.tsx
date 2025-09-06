@@ -1,11 +1,10 @@
 import {useState} from "react";
-import {login} from "../../services/auth";
 import {useNavigate} from "react-router-dom";
 import './Login.model.css';
 import {useAuthStore} from "@/auth/store/auth.store.tsx";
 
 
-export default function LoginPage() {
+export const LoginPage = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -13,7 +12,7 @@ export default function LoginPage() {
     const navigate = useNavigate();
     const { login } = useAuthStore()
 
-    async function handleSubmit(e) {
+    async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setError("");
         const isValid = await login(username, password)
@@ -60,7 +59,17 @@ export default function LoginPage() {
                         Login
                     </button>
                 </form>
+                <div className="mt-3">
+                    <button
+                        className="btn btn-secondary"
+                        onClick={() => navigate('/register')}
+                    >
+                        Register
+                    </button>
+                </div>
             </div>
         </main>
     );
 }
+
+export default LoginPage;

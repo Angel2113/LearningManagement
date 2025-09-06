@@ -13,7 +13,7 @@ logger.setLevel(logging.DEBUG)
 goals_router = APIRouter()
 user_dependency = Annotated[dict, Depends(get_current_user)]
 
-@goals_router.get("/goals/get_all_goals", tags=["goals"], dependencies=[Depends(security)])
+@goals_router.get("/goals", tags=["goals"], dependencies=[Depends(security)])
 async def get_all_goals(request: Request, db: Session = Depends(get_db)):
     """
     Get all goals for user
@@ -24,7 +24,7 @@ async def get_all_goals(request: Request, db: Session = Depends(get_db)):
     user_id = request.state.user_id
     return goals_crud.get_all_goals(db, user_id)
 
-@goals_router.get("/goals/get_goal/{goal_id}", tags=["goals"], dependencies=[Depends(security)])
+@goals_router.get("/goals/{goal_id}", tags=["goals"], dependencies=[Depends(security)])
 async def get_goal(request: Request, goal_id: str, db: Session = Depends(get_db)):
     """
     Get a goal by id (READ)
@@ -48,7 +48,7 @@ async def get_goal(request: Request, goal_id: str, db: Session = Depends(get_db)
 
     return goal
 
-@goals_router.post("/create_goal", tags=["goals"], dependencies=[Depends(security)])
+@goals_router.post("/goals", tags=["goals"], dependencies=[Depends(security)])
 async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = Depends(get_db)):
     """
     Create a goal (CREATE)
@@ -58,7 +58,7 @@ async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = De
     """
     return goals_crud.create_goal(request, db, goal)
 
-@goals_router.put('/update_goal/{goal_id}', tags=["goals"], dependencies=[Depends(security)])
+@goals_router.put('/goals/{goal_id}', tags=["goals"], dependencies=[Depends(security)])
 async def update_goal(request: Request, goal_id: str, updates: UpdateGoalSchema, db: Session = Depends(get_db)):
     """
     Update a goal (UPDATE)
@@ -80,7 +80,7 @@ async def update_goal(request: Request, goal_id: str, updates: UpdateGoalSchema,
             return {"message": "Goal not found"}
     return goals_crud.update_goal(db, goal_id, updates)
 
-@goals_router.delete("/delete_goal/{goal_id}", tags=["goals"], dependencies=[Depends(security)])
+@goals_router.delete("/goals/{goal_id}", tags=["goals"], dependencies=[Depends(security)])
 async def delete_goal(request: Request, goal_id: str, db: Session = Depends(get_db)):
     goal = goals_crud.get_goal(db, goal_id)
     user_id = request.state.user_id

@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/AddUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/goals_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/users_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/Goal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/Goal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +33,8 @@
         <option value="Dockerfile" />
         <option value="CSS File" />
         <option value="Python Script" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -143,7 +153,12 @@
       <workItem from="1756298612254" duration="84000" />
       <workItem from="1756298699455" duration="3519000" />
       <workItem from="1756350773314" duration="663000" />
-      <workItem from="1756738721682" duration="3301000" />
+      <workItem from="1756738721682" duration="5191000" />
+      <workItem from="1756773869615" duration="6757000" />
+      <workItem from="1756925181587" duration="802000" />
+      <workItem from="1756956705071" duration="24000" />
+      <workItem from="1757116683320" duration="952000" />
+      <workItem from="1757175393344" duration="6434000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />

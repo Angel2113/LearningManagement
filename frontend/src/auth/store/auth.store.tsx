@@ -3,6 +3,7 @@ import {persist} from "zustand/middleware";
 import {login} from "@/services/auth.tsx";
 import {jwtDecode} from "jwt-decode";
 
+
 type JwtPayload = {
     user_id: string;
     username: string;
@@ -65,6 +66,7 @@ export const useAuthStore = create<AuthState>()(
             logout: () => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("auth-storage");
+                window.location.href = "/login";
             },
         }),
         {

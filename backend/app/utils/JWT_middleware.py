@@ -5,8 +5,7 @@ from starlette.responses import JSONResponse
 from datetime import datetime
 import logging
 
-EXCLUDE_PATHS = ["/home", "/auth/login", "/docs", "/openapi.json"]
-TESTING_PATHS = ["/goals/get_all_goals/{user_id}", "/goals/get_all_goals/"]
+EXCLUDE_PATHS = ["/home", "/auth/login", "/docs", "/openapi.json", "/register"]
 
 logger = logging.getLogger('uvicorn.error')
 logger.setLevel(logging.DEBUG)

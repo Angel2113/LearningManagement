@@ -18,7 +18,6 @@ def create_user(db: Session, user: UserCreate) -> dict:
     """
     # Validate if the user already exists
     user_from_db = get_user(db=db, username = user.username)
-    logger.info(f"User from db looking by username: {user_from_db}")
     if user_from_db: return {"message": "User already exists"}
 
     # Validate if the email already exists
@@ -28,6 +27,7 @@ def create_user(db: Session, user: UserCreate) -> dict:
 
     # Validate if the password matches the confirmation password
     if user.password != user.password_confirmation:
+        logger.info(f"Passwords do not match")
         return {"message": "Passwords do not match"}
 
     new_user = Users(
@@ -37,6 +37,7 @@ def create_user(db: Session, user: UserCreate) -> dict:
         password_hash = hash_password(user.password),
         role = user.role
     )
+    logger.info(f"New user: {new_user}")
     db.add(new_user)
     db.commit()
     db.refresh(new_user)

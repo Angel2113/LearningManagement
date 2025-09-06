@@ -15,25 +15,30 @@ export const AdminHomePage = () => {
     const [showUpdateModal, setShowUpdateModal] = useState(false);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-    useEffect(() => {
-        async function fetchUsers() {
-            try {
-                const response = await getAllUsers();
-                setUsers(response);
-            } catch (err) {
-                throw new Error('Error fetching users');
-            }
-        }
 
+    const fetchUsers = async () => {
+        try {
+            const response = await getAllUsers();
+            setUsers(response);
+        } catch (err) {
+            throw new Error('Error fetching users');
+        }
+    }
+
+    useEffect(() => {
         fetchUsers();
     }, []);
 
-    const handleAddUser= (username: string) => {
+    const handleAddUser= async (username: string) => {
         console.log(`Adding user: ${username}`);
         if(addUser) {
             try {
-                const response = createUser(addUser);
+                const response =  await createUser(addUser);
                 setShowAddModal(false);
+                console.log(`Response: ${response}`);
+                if (response === 200) {
+                    await fetchUsers();
+                }
             } catch (error) {
                 throw new Error('Error adding user');
             }
@@ -41,28 +46,27 @@ export const AdminHomePage = () => {
 
     };
 
-    const handleUpdateUser = (username: string) => {
+    const handleUpdateUser = async (username: string) => {
         console.log(`Updating user: ${username}`);
         if(editedUser){
             try {
                 updateUser(editedUser.id, editedUser);
-                setUsers(users.map((u) => (u.id === editedUser.id ? editedUser : u)));
                 setShowUpdateModal(false);
+                await fetchUsers();
             }catch (error) {
                 throw new Error('Error updating user');
             }
         }
     };
 
-
-    const handleDeleteUser = (username: string) => {
+    const handleDeleteUser = async (username: string) => {
         console.log(`Dude, are you trying to delete the user: ${username} ?`);
         if(selectedUser){
             try {
                 console.log(`Deleting user: ${selectedUser.username}`);
-                deleteUser(selectedUser.id);
-                setUsers(users.filter((u) => u.id !== selectedUser.id));
+                await deleteUser(selectedUser.id);
                 setShowDeleteModal(false);
+                await fetchUsers();
             } catch (err) {
                 throw new Error('Error deleting user');
             }
@@ -308,7 +312,7 @@ export const AdminHomePage = () => {
                                             Email
                                         </label>
                                         <input
-                                            type="text"
+                                            type="email"
                                             id="email"
                                             className="form-control"
                                             value={addUser?.email || ""}
@@ -362,7 +366,7 @@ export const AdminHomePage = () => {
                                             Confirmation Password
                                         </label>
                                         <input
-                                            type="confirm_password"
+                                            type="password"
                                             id="confirm_password"
                                             title="confirm_password"
                                             className="form-control"
@@ -395,3 +399,5 @@ export const AdminHomePage = () => {
         </>
     );
 };
+
+export default AdminHomePage;
