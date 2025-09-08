@@ -1,75 +1,90 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import './Login.model.css';
 import {useAuthStore} from "@/auth/store/auth.store.tsx";
-
+import {Button, Heading, Box, Flex, Card, TextField, Text, Container} from "@radix-ui/themes";
 
 export const LoginPage = () => {
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const { login } = useAuthStore()
+    const {login} = useAuthStore();
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setError("");
-        const isValid = await login(username, password)
-        if( isValid ){
-            navigate('/home');
+        const isValid = await login(username, password);
+        if (isValid) {
+            navigate("/home");
         } else {
             setError("Invalid credentials");
         }
     }
+
     return (
+        <Flex
+            align="center"
+            justify="center"
+            className="min-h-screen"
 
-        <main className="form-signin w-100 m-auto d-flex align-items-center justify-content-center vh-100 bg-light">
+        >
+            <Card
+                variant="surface"
+                size="4"
+                className="w-full"
 
-            <div className="container mt-5">
-                <h2>Login</h2>
+            >
+                <Heading size="4" className="text-center mb-4">
+                    Login
+                </Heading>
+                <br></br>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-floating mb-3">
+                    <Flex direction="column" gap="4">
+                        <Container width="100%" className="mt-2">
+                            <Text>Username</Text>
+                            <TextField.Root
+                                placeholder="Enter your username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </Container>
+                        <Container width="100%" className="mt-2">
+                            <Text size="2">Password</Text>
+                            <TextField.Root
+                                type="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </Container>
 
-                        <input
-                            className="form-control"
-                            placeholder="username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <label>Username</label>
-                    </div>
-                    <div className="form-floating mb-3">
+                        {/* Mensaje de error */}
+                        {error && (
+                            <Container
+                                className="text-danger"
 
-                        <input
-                            type="password"
-                            className="form-control"
-                            value={password}
-                            placeholder="password"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <label>Password</label>
-                    </div>
-                    {error && (
-                        <div className="alert alert-danger" role="alert">
-                            {error}
-                        </div>)
-                    }
-                    <button className="btn btn-primary" type="submit">
-                        Login
-                    </button>
+                            >
+                                {error}
+                            </Container>
+                        )}
+                        <Button type="submit" className="w-full" variant="surface">
+                            Login
+                        </Button>
+                    </Flex>
                 </form>
-                <div className="mt-3">
-                    <button
-                        className="btn btn-secondary"
-                        onClick={() => navigate('/register')}
+
+                <Flex direction="column" gap="4">
+                    <Button
+                        className="w-full"
+                        variant="surface"
+                        onClick={() => navigate("/register")}
                     >
                         Register
-                    </button>
-                </div>
-            </div>
-        </main>
+                    </Button>
+                </Flex>
+            </Card>
+        </Flex>
     );
-}
+};
 
 export default LoginPage;

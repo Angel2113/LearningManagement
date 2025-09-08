@@ -1,19 +1,22 @@
-import AdminNavBar from "@/admin/components/AdminNavBar.tsx";
+
 import {createUser, deleteUser, getAllUsers, updateUser} from "@/services/userService.ts";
 import {useEffect, useState} from "react";
 import {User} from "@/types/User";
-import {LucideUser} from "lucide-react";
 import {AddUser} from "@/types/AddUser.ts";
+import {Dialog, Button, Grid, Heading, Card,  Flex, Badge, Text} from '@radix-ui/themes';
+import {NavigationMenu} from "radix-ui";
+import {useAuthStore} from "@/auth/store/auth.store.tsx";
+import "./AdminNavBar.css";
+import { TrashIcon, Pencil2Icon } from "@radix-ui/react-icons"
 
 export const AdminHomePage = () => {
+    const { logout } = useAuthStore();
     const [users, setUsers] = useState<User[]>([]);
     const [addUser, setAddUser] = useState<AddUser |  null>(null);
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [editedUser, setEditedUser] = useState<User | null>(null);
 
     const [showAddModal, setShowAddModal] = useState(false)
-    const [showUpdateModal, setShowUpdateModal] = useState(false);
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
 
     const fetchUsers = async () => {
@@ -51,8 +54,7 @@ export const AdminHomePage = () => {
         if(editedUser){
             try {
                 updateUser(editedUser.id, editedUser);
-                setShowUpdateModal(false);
-                await fetchUsers();
+                await fetchUsers(); // <- Why this part is not working?
             }catch (error) {
                 throw new Error('Error updating user');
             }
@@ -63,9 +65,7 @@ export const AdminHomePage = () => {
         console.log(`Dude, are you trying to delete the user: ${username} ?`);
         if(selectedUser){
             try {
-                console.log(`Deleting user: ${selectedUser.username}`);
                 await deleteUser(selectedUser.id);
-                setShowDeleteModal(false);
                 await fetchUsers();
             } catch (err) {
                 throw new Error('Error deleting user');
@@ -76,18 +76,14 @@ export const AdminHomePage = () => {
 
     return (
         <>
-            <AdminNavBar/>
-            <div className="container mt-5">
-                <h1 className="mb-4 text-center text-white  rounded p-3 shadow">
-                    Admin Dashboard
-                </h1>
-
-                <div className="card shadow-lg border-light">
-                    <div
-                        className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                        <h4 className="mb-0">User List</h4>
-                        <button
-                            className="btn btn-sm btn-success"
+            <NavigationMenu.Root className="NavigationMenuRoot">
+                <NavigationMenu.List className="NavigationMenuList">
+                    <NavigationMenu.Item>
+                        <Heading as="h1" className="text-center mb-4">Admin Dashboard</Heading>
+                    </NavigationMenu.Item>
+                    <NavigationMenu.Item>
+                        <NavigationMenu.Link
+                            className="NavigationMenuLink"
                             onClick={() =>{
                                 setAddUser({
                                     username: "",
@@ -98,184 +94,272 @@ export const AdminHomePage = () => {
                                 } as AddUser)
                                 setShowAddModal(true)
                             }}
-                            title="Add User"
-                        >Add User</button>
-                    </div>
-                    <ul className="list-group list-group-flush">
-                        {users.map((u) => (
-                            <li
-                                key={u.username}
-                                className="list-group-item d-flex justify-content-between align-items-center"
-                                style={{
-                                    padding: "1rem",
-                                    transition: "transform 0.2s ease-in-out",
-                                }}
-                                onMouseEnter={(e) =>
-                                    (e.currentTarget.style.transform = "scale(1.01)")
-                                }
-                                onMouseLeave={(e) =>
-                                    (e.currentTarget.style.transform = "scale(1)")
-                                }
-                            >
-                                <div className="d-flex align-items-center">
-                                    <div
-                                        className="avatar rounded-circle bg-light text-center d-flex align-items-center justify-content-center me-3"
-                                        style={{
-                                            width: "50px",
-                                            height: "50px",
-                                            fontSize: "1.5rem",
-                                        }}
+                        >Add User</NavigationMenu.Link>
+                    </NavigationMenu.Item>
+                    <NavigationMenu.Item>
+                        <NavigationMenu.Link
+                            className="NavigationMenuLink"
+                            onClick={logout}
+                        >
+                            Logout
+                        </NavigationMenu.Link>
+                    </NavigationMenu.Item>
+                </NavigationMenu.List>
+            </NavigationMenu.Root>
+            <div className="flex min-h-screen flex-col items-center justify-center p-24">
+                <br/>
+                <Card>
+                    <Flex justify="start" my="2">
+                        <Heading as="h2">User List</Heading>
+                    </Flex>
+                    <Flex justify="end" my="2">
+                        <Dialog.Root>
+                            <Dialog.Trigger>
+                                <Button>Add User</Button>
+                            </Dialog.Trigger>
+                            <Dialog.Content>
+                                <Dialog.Title>Add User</Dialog.Title>
+                                <Grid columns="2" gap="4">
+                                    <label htmlFor="username" className="form-label">
+                                        Username
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="username"
+                                        className="form-control"
+                                        value={addUser?.username || ""}
+                                        onChange={(e) =>
+                                            setAddUser({
+                                                ...addUser,  // Copy properties from addUser on new user
+                                                username: e.target.value,
+                                            } as AddUser)
+                                        }
+                                    />
+                                </Grid>
+                                <Grid columns="2" gap="4">
+                                    <label htmlFor="email" className="form-label">
+                                        Email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="form-control"
+                                        value={addUser?.email || ""}
+                                        onChange={(e) =>
+                                            setAddUser({
+                                                ...addUser,  // Copy properties from editedUser in a new user
+                                                email: e.target.value,
+                                            } as AddUser)
+                                        }
+                                    />
+                                </Grid>
+                                <Grid columns="2" gap="4">
+                                    <label htmlFor="role" className="form-label">
+                                        Role
+                                    </label>
+                                    <select
+                                        id="role"
+                                        className="form-select"
+                                        value={addUser?.role || ""}
+                                        onChange={(e) =>
+                                            setAddUser({
+                                                ...addUser,
+                                                role: e.target.value,
+                                            } as AddUser)
+                                        }
                                     >
-                                        <LucideUser className="text-primary"/>
-                                    </div>
-                                    <div>
-                                        <strong className="text-dark">{u.email}</strong>
-                                        <div className="text-muted">
-                                            Role: <strong>{u.role}</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="action-buttons d-flex gap-2">
-                                    <button
-                                        className="btn btn-sm btn-outline-primary"
-                                        onClick={() => {
-                                            setEditedUser(u);
-                                            setShowUpdateModal(true);
-                                        }}
-                                        title="Update User"
-                                    >
-                                        <i className="fas fa-pencil-alt"></i>
-                                    </button>
-                                    <button
-                                        className="btn btn-sm btn-outline-danger"
-                                        onClick={() => {
-                                            setSelectedUser(u);
-                                            setShowDeleteModal(true);
-                                        }}
-                                        title="Delete User"
-                                    >
-                                        <i className="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Delete Modal */}
-                {
-                    showDeleteModal && (
-                        <div className="modal show d-block" style={{ background: "rgba(0,0,0,0.5)" }}>
-                            <div className="modal-dialog">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h5 className="modal-title">Confirm Deletion</h5>
-                                        <button className="btn-close" onClick={() => setShowDeleteModal(false)}></button>
-                                    </div>
-                                    <div className="modal-body">
-                                        <p>
-                                            Are you sure you want to delete user <strong>{selectedUser?.username}</strong>?
-                                        </p>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button
-                                            className="btn btn-secondary"
-                                            onClick={() => setShowDeleteModal(false)}
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                </Grid>
+                                <Grid columns="2" gap="4">
+                                    <label htmlFor="role" className="form-label">
+                                        Password
+                                    </label>
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        title="Password"
+                                        className="form-control"
+                                        value={ addUser?.password || ""}
+                                        onChange={(e) =>
+                                            setAddUser({
+                                                ...addUser,
+                                                password: e.target.value,
+                                            } as AddUser)
+                                        }
+                                    />
+                                </Grid>
+                                <Grid columns="2" gap="4">
+                                    <label htmlFor="role" className="form-label">
+                                        Confirmation Password
+                                    </label>
+                                    <input
+                                        type="password"
+                                        id="confirm_password"
+                                        title="confirm_password"
+                                        className="form-control"
+                                        value={ addUser?.password_confirmation || ""}
+                                        onChange={(e) =>
+                                            setAddUser({
+                                                ...addUser,
+                                                password_confirmation: e.target.value,
+                                            } as AddUser)
+                                        }
+                                    />
+                                </Grid>
+                                <Flex gap="3" justify="end">
+                                    <Dialog.Close>
+                                        <Button variant="soft">Cancel</Button>
+                                    </Dialog.Close>
+                                    <Dialog.Close>
+                                        <Button onClick={handleAddUser}>
+                                            Save Changes
+                                        </Button>
+                                    </Dialog.Close>
+                                </Flex>
+                            </Dialog.Content>
+                        </Dialog.Root>
+                    </Flex>
+                </Card>
+                <br/>
+                <Grid columns="3" gap="4">
+                    {users.map((u) => (
+                        <Card className="hover:cursor-pointer hover:opacity-80" key={u.id}>
+                            <Flex justify="between" align="center">
+                                <Heading as="h3">{u.username}</Heading>
+                                <Badge
+                                    color={
+                                        u.role == "admin" ? "red" : "yellow"
+                                    }
+                                >{u.role}</Badge>
+                            </Flex>
+                            <Flex justify="between" my="2">
+                                <Text>Email: {u.email}</Text>
+                            </Flex>
+                            <Flex justify="between" my="2">
+                                <Dialog.Root>
+                                    <Dialog.Trigger>
+                                        <Button
+                                            onClick={() => {
+                                                setEditedUser(u);
+                                            }}
+                                            title="Update User"
                                         >
-                                            Cancel
-                                        </button>
-                                        <button className="btn btn-danger" onClick={handleDeleteUser}>
-                                            Delete
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
-
-                {/* Update Modal */}
-                {showUpdateModal && (
-                    <div className="modal show d-block" style={{ background: "rgba(0,0,0,0.5)" }}>
-                        <div className="modal-dialog">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title">Update User</h5>
-                                    <button
-                                        className="btn-close"
-                                        onClick={() => setShowUpdateModal(false)}
-                                    ></button>
-                                </div>
-                                <div className="modal-body">
-                                    <div className="mb-3">
-                                        <label htmlFor="username" className="form-label">
-                                            Username
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="username"
-                                            className="form-control"
-                                            value={editedUser?.username || ""}
-                                            onChange={(e) =>
-                                                setEditedUser({
-                                                    ...editedUser,  // Copy properties from editedUser in a new user
-                                                    username: e.target.value,
-                                                } as User)
-                                            }
-                                        />
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">
-                                            Email
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="email"
-                                            className="form-control"
-                                            value={editedUser?.email || ""}
-                                            onChange={(e) =>
-                                                setEditedUser({
-                                                    ...editedUser,  // Copy properties from editedUser in a new user
-                                                    email: e.target.value,
-                                                } as User)
-                                            }
-                                        />
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="role" className="form-label">
-                                            Role
-                                        </label>
-                                        <select
-                                            id="role"
-                                            className="form-select"
-                                            value={editedUser?.role || ""}
-                                            onChange={(e) =>
-                                                setEditedUser({
-                                                    ...editedUser,
-                                                    role: e.target.value,
-                                                } as User)
-                                            }
+                                            <Pencil2Icon />
+                                        </Button>
+                                    </Dialog.Trigger>
+                                    <Dialog.Content>
+                                        <Flex justify="center">
+                                            <Dialog.Title className="DialogTitle" >
+                                                Update User
+                                            </Dialog.Title>
+                                        </Flex>
+                                        <Grid columns="2" >
+                                            <label htmlFor="username" className="form-label">
+                                                Username
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="username"
+                                                className="form-control"
+                                                value={editedUser?.username || ""}
+                                                onChange={(e) =>
+                                                    setEditedUser({
+                                                        ...editedUser,  // Copy properties from editedUser in a new user
+                                                        username: e.target.value,
+                                                    } as User)
+                                                }
+                                            />
+                                        </Grid>
+                                        <Grid columns="2">
+                                            <label htmlFor="email" className="form-label">
+                                                Email
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="email"
+                                                className="form-control"
+                                                value={editedUser?.email || ""}
+                                                onChange={(e) =>
+                                                    setEditedUser({
+                                                        ...editedUser,  // Copy properties from editedUser in a new user
+                                                        email: e.target.value,
+                                                    } as User)
+                                                }
+                                            />
+                                        </Grid>
+                                        <Grid columns="2">
+                                            <label htmlFor="role" className="form-label">
+                                                Role
+                                            </label>
+                                            <select
+                                                id="role"
+                                                className="form-select"
+                                                value={editedUser?.role || ""}
+                                                onChange={(e) =>
+                                                    setEditedUser({
+                                                        ...editedUser,
+                                                        role: e.target.value,
+                                                    } as User)
+                                                }
+                                            >
+                                                <option value="user">User</option>
+                                                <option value="admin">Admin</option>
+                                            </select>
+                                        </Grid>
+                                        <Flex gap="3" justify="end">
+                                            <Dialog.Close>
+                                                <Button variant="soft">Cancel</Button>
+                                            </Dialog.Close>
+                                            <Dialog.Close>
+                                                <Button onClick={handleUpdateUser}>
+                                                    Save Changes
+                                                </Button>
+                                            </Dialog.Close>
+                                        </Flex>
+                                    </Dialog.Content>
+                                </Dialog.Root>
+                                <Dialog.Root>
+                                    <Dialog.Trigger>
+                                        <Button
+                                            color="red"
+                                            onClick={() => {
+                                                setSelectedUser(u);
+                                            }}
+                                            title="Delete User"
                                         >
-                                            <option value="user">User</option>
-                                            <option value="admin">Admin</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-                                    <button
-                                        className="btn btn-secondary"
-                                        onClick={() => setShowUpdateModal(false)}
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button className="btn btn-primary" onClick={handleUpdateUser}>
-                                        Save Changes
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
+                                            <TrashIcon />
+                                        </Button>
+                                    </Dialog.Trigger>
+                                    <Dialog.Content>
+                                        <Flex>
+                                            <Dialog.Title className="DialogTitle">
+                                                Delete User
+                                            </Dialog.Title>
+                                        </Flex>
+                                        <Flex>
+                                            <Dialog.Description className="DialogDescription">
+                                                Are you sure you want to delete user <strong>{selectedUser?.username}</strong>?
+                                            </Dialog.Description>
+                                        </Flex>
+
+                                        <Flex gap="3" justify="end">
+                                            <Dialog.Close>
+                                                <Button onClick={handleDeleteUser}>Delete</Button>
+                                            </Dialog.Close>
+                                            <Dialog.Close>
+                                                <Button variant="soft">Cancel</Button>
+                                            </Dialog.Close>
+                                        </Flex>
+                                    </Dialog.Content>
+                                </Dialog.Root>
+                            </Flex>
+                        </Card>
+                    ))}
+                </Grid>
+            </div>
+
 
                 {/* Add User Modal */}
                 {showAddModal && (
@@ -291,111 +375,29 @@ export const AdminHomePage = () => {
                                 </div>
                                 <div className="modal-body">
                                     <div className="mb-3">
-                                        <label htmlFor="username" className="form-label">
-                                            Username
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="username"
-                                            className="form-control"
-                                            value={addUser?.username || ""}
-                                            onChange={(e) =>
-                                                setAddUser({
-                                                    ...addUser,  // Copy properties from addUser on new user
-                                                    username: e.target.value,
-                                                } as AddUser)
-                                            }
-                                        />
+
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">
-                                            Email
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            className="form-control"
-                                            value={addUser?.email || ""}
-                                            onChange={(e) =>
-                                                setAddUser({
-                                                    ...addUser,  // Copy properties from editedUser in a new user
-                                                    email: e.target.value,
-                                                } as AddUser)
-                                            }
-                                        />
+
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="role" className="form-label">
-                                            Role
-                                        </label>
-                                        <select
-                                            id="role"
-                                            className="form-select"
-                                            value={addUser?.role || ""}
-                                            onChange={(e) =>
-                                                setAddUser({
-                                                    ...addUser,
-                                                    role: e.target.value,
-                                                } as AddUser)
-                                            }
-                                        >
-                                            <option value="user">User</option>
-                                            <option value="admin">Admin</option>
-                                        </select>
+
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="role" className="form-label">
-                                            Password
-                                        </label>
-                                        <input
-                                            type="password"
-                                            id="password"
-                                            title="Password"
-                                            className="form-control"
-                                            value={ addUser?.password || ""}
-                                            onChange={(e) =>
-                                                setAddUser({
-                                                    ...addUser,
-                                                    password: e.target.value,
-                                                } as AddUser)
-                                            }
-                                        />
+
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="role" className="form-label">
-                                            Confirmation Password
-                                        </label>
-                                        <input
-                                            type="password"
-                                            id="confirm_password"
-                                            title="confirm_password"
-                                            className="form-control"
-                                            value={ addUser?.password_confirmation || ""}
-                                            onChange={(e) =>
-                                                setAddUser({
-                                                    ...addUser,
-                                                    password_confirmation: e.target.value,
-                                                } as AddUser)
-                                            }
-                                        />
+
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button
-                                        className="btn btn-secondary"
-                                        onClick={() => setShowAddModal(false)}
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button className="btn btn-primary" onClick={handleAddUser}>
-                                        Save Changes
-                                    </button>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 )}
-            </div>
+
         </>
     );
 };
