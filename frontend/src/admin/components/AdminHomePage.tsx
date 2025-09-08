@@ -119,95 +119,105 @@ export const AdminHomePage = () => {
                             </Dialog.Trigger>
                             <Dialog.Content>
                                 <Dialog.Title>Add User</Dialog.Title>
-                                <Grid columns="2" gap="4">
-                                    <label htmlFor="username" className="form-label">
-                                        Username
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="username"
-                                        className="form-control"
-                                        value={addUser?.username || ""}
-                                        onChange={(e) =>
-                                            setAddUser({
-                                                ...addUser,  // Copy properties from addUser on new user
-                                                username: e.target.value,
-                                            } as AddUser)
-                                        }
-                                    />
-                                </Grid>
-                                <Grid columns="2" gap="4">
-                                    <label htmlFor="email" className="form-label">
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        className="form-control"
-                                        value={addUser?.email || ""}
-                                        onChange={(e) =>
-                                            setAddUser({
-                                                ...addUser,  // Copy properties from editedUser in a new user
-                                                email: e.target.value,
-                                            } as AddUser)
-                                        }
-                                    />
-                                </Grid>
-                                <Grid columns="2" gap="4">
-                                    <label htmlFor="role" className="form-label">
-                                        Role
-                                    </label>
-                                    <select
-                                        id="role"
-                                        className="form-select"
-                                        value={addUser?.role || ""}
-                                        onChange={(e) =>
-                                            setAddUser({
-                                                ...addUser,
-                                                role: e.target.value,
-                                            } as AddUser)
-                                        }
-                                    >
-                                        <option value="user">User</option>
-                                        <option value="admin">Admin</option>
-                                    </select>
-                                </Grid>
-                                <Grid columns="2" gap="4">
-                                    <label htmlFor="role" className="form-label">
-                                        Password
-                                    </label>
-                                    <input
-                                        type="password"
-                                        id="password"
-                                        title="Password"
-                                        className="form-control"
-                                        value={ addUser?.password || ""}
-                                        onChange={(e) =>
-                                            setAddUser({
-                                                ...addUser,
-                                                password: e.target.value,
-                                            } as AddUser)
-                                        }
-                                    />
-                                </Grid>
-                                <Grid columns="2" gap="4">
-                                    <label htmlFor="role" className="form-label">
-                                        Confirmation Password
-                                    </label>
-                                    <input
-                                        type="password"
-                                        id="confirm_password"
-                                        title="confirm_password"
-                                        className="form-control"
-                                        value={ addUser?.password_confirmation || ""}
-                                        onChange={(e) =>
-                                            setAddUser({
-                                                ...addUser,
-                                                password_confirmation: e.target.value,
-                                            } as AddUser)
-                                        }
-                                    />
-                                </Grid>
+                                <Flex gap="3" my="2">
+                                    <Grid columns="2" gap="4">
+                                        <label htmlFor="username" className="form-label">
+                                            Username
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="username"
+                                            className="form-control"
+                                            value={addUser?.username || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,  // Copy properties from addUser on new user
+                                                    username: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </Grid>
+                                </Flex>
+                                <Flex gap="3" my="2">
+                                    <Grid columns="2" gap="4">
+                                        <label htmlFor="email" className="form-label">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            className="form-control"
+                                            value={addUser?.email || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,  // Copy properties from editedUser in a new user
+                                                    email: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </Grid>
+                                </Flex>
+                                <Flex gap="3" my="2">
+                                    <Grid columns="2" gap="4">
+                                        <label htmlFor="role" className="form-label">
+                                            Role
+                                        </label>
+                                        <select
+                                            id="role"
+                                            className="form-select"
+                                            value={addUser?.role || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    role: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        >
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
+                                        </select>
+                                    </Grid>
+                                </Flex>
+                                <Flex gap="3" my="2">
+                                    <Grid columns="2" gap="4">
+                                        <label htmlFor="role" className="form-label">
+                                            Password
+                                        </label>
+                                        <input
+                                            type="password"
+                                            id="password"
+                                            title="Password"
+                                            className="form-control"
+                                            value={ addUser?.password || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    password: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </Grid>
+                                </Flex>
+                                <Flex gap="3" my="2">
+                                    <Grid columns="2" gap="4">
+                                        <label htmlFor="role" className="form-label">
+                                            Confirmation Password
+                                        </label>
+                                        <input
+                                            type="password"
+                                            id="confirm_password"
+                                            title="confirm_password"
+                                            className="form-control"
+                                            value={ addUser?.password_confirmation || ""}
+                                            onChange={(e) =>
+                                                setAddUser({
+                                                    ...addUser,
+                                                    password_confirmation: e.target.value,
+                                                } as AddUser)
+                                            }
+                                        />
+                                    </Grid>
+                                </Flex>
                                 <Flex gap="3" justify="end">
                                     <Dialog.Close>
                                         <Button variant="soft">Cancel</Button>
@@ -255,59 +265,65 @@ export const AdminHomePage = () => {
                                                 Update User
                                             </Dialog.Title>
                                         </Flex>
-                                        <Grid columns="2" >
-                                            <label htmlFor="username" className="form-label">
-                                                Username
-                                            </label>
-                                            <input
-                                                type="text"
-                                                id="username"
-                                                className="form-control"
-                                                value={editedUser?.username || ""}
-                                                onChange={(e) =>
-                                                    setEditedUser({
-                                                        ...editedUser,  // Copy properties from editedUser in a new user
-                                                        username: e.target.value,
-                                                    } as User)
-                                                }
-                                            />
-                                        </Grid>
-                                        <Grid columns="2">
-                                            <label htmlFor="email" className="form-label">
-                                                Email
-                                            </label>
-                                            <input
-                                                type="text"
-                                                id="email"
-                                                className="form-control"
-                                                value={editedUser?.email || ""}
-                                                onChange={(e) =>
-                                                    setEditedUser({
-                                                        ...editedUser,  // Copy properties from editedUser in a new user
-                                                        email: e.target.value,
-                                                    } as User)
-                                                }
-                                            />
-                                        </Grid>
-                                        <Grid columns="2">
-                                            <label htmlFor="role" className="form-label">
-                                                Role
-                                            </label>
-                                            <select
-                                                id="role"
-                                                className="form-select"
-                                                value={editedUser?.role || ""}
-                                                onChange={(e) =>
-                                                    setEditedUser({
-                                                        ...editedUser,
-                                                        role: e.target.value,
-                                                    } as User)
-                                                }
-                                            >
-                                                <option value="user">User</option>
-                                                <option value="admin">Admin</option>
-                                            </select>
-                                        </Grid>
+                                        <Flex gap="3" my="2">
+                                            <Grid columns="2" >
+                                                <label htmlFor="username" className="form-label">
+                                                    Username
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="username"
+                                                    className="form-control"
+                                                    value={editedUser?.username || ""}
+                                                    onChange={(e) =>
+                                                        setEditedUser({
+                                                            ...editedUser,  // Copy properties from editedUser in a new user
+                                                            username: e.target.value,
+                                                        } as User)
+                                                    }
+                                                />
+                                            </Grid>
+                                        </Flex>
+                                        <Flex gap="3" my="2">
+                                            <Grid columns="2">
+                                                <label htmlFor="email" className="form-label">
+                                                    Email
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="email"
+                                                    className="form-control"
+                                                    value={editedUser?.email || ""}
+                                                    onChange={(e) =>
+                                                        setEditedUser({
+                                                            ...editedUser,  // Copy properties from editedUser in a new user
+                                                            email: e.target.value,
+                                                        } as User)
+                                                    }
+                                                />
+                                            </Grid>
+                                        </Flex>
+                                        <Flex gap="3" my="2">
+                                            <Grid columns="2">
+                                                <label htmlFor="role" className="form-label">
+                                                    Role
+                                                </label>
+                                                <select
+                                                    id="role"
+                                                    className="form-select"
+                                                    value={editedUser?.role || ""}
+                                                    onChange={(e) =>
+                                                        setEditedUser({
+                                                            ...editedUser,
+                                                            role: e.target.value,
+                                                        } as User)
+                                                    }
+                                                >
+                                                    <option value="user">User</option>
+                                                    <option value="admin">Admin</option>
+                                                </select>
+                                            </Grid>
+                                        </Flex>
                                         <Flex gap="3" justify="end">
                                             <Dialog.Close>
                                                 <Button variant="soft">Cancel</Button>
@@ -359,45 +375,6 @@ export const AdminHomePage = () => {
                     ))}
                 </Grid>
             </div>
-
-
-                {/* Add User Modal */}
-                {showAddModal && (
-                    <div className="modal show d-block" style={{ background: "rgba(0,0,0,0.5)" }}>
-                        <div className="modal-dialog">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title">Add User</h5>
-                                    <button
-                                        className="btn-close"
-                                        onClick={() => setShowAddModal(false)}
-                                    ></button>
-                                </div>
-                                <div className="modal-body">
-                                    <div className="mb-3">
-
-                                    </div>
-                                    <div className="mb-3">
-
-                                    </div>
-                                    <div className="mb-3">
-
-                                    </div>
-                                    <div className="mb-3">
-
-                                    </div>
-                                    <div className="mb-3">
-
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
         </>
     );
 };
