@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/user_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/models/Goals.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Goals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/goals_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/routes/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/users_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/JWT_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/components/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/auth/store/auth.store.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/types/Goal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/Goal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
@@ -31,10 +31,10 @@
       <list>
         <option value="SQL File" />
         <option value="Dockerfile" />
-        <option value="CSS File" />
         <option value="Python Script" />
-        <option value="TypeScript File" />
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -158,7 +158,12 @@
       <workItem from="1756925181587" duration="802000" />
       <workItem from="1756956705071" duration="24000" />
       <workItem from="1757116683320" duration="952000" />
-      <workItem from="1757175393344" duration="6434000" />
+      <workItem from="1757175393344" duration="22528000" />
+      <workItem from="1757288976377" duration="4218000" />
+      <workItem from="1757334176489" duration="1297000" />
+      <workItem from="1757378260740" duration="20060000" />
+      <workItem from="1757503838270" duration="3189000" />
+      <workItem from="1757546078331" duration="5111000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />

@@ -36,14 +36,12 @@ async def get_goal(request: Request, goal_id: str, db: Session = Depends(get_db)
     goal = goals_crud.get_goal(db, goal_id)
     user_id = request.state.user_id
 
-    logger.info(f"Getting goal----------_>: {goal}")
-
     # Verify if the goal exists
     if not goal:
         return {"message": "Hey dude, this goal doesn't exist"}
 
     # Verify if the user is the correct one
-    if goal.user_id != user_id:
+    if str(goal.user_id) != str(user_id):
         return {"message": "Hey dude, this goal doesn't belong to you"}
 
     return goal
@@ -56,6 +54,7 @@ async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = De
     :param db: Database session
     :return: Result message
     """
+    logger.info(f"Creating goal: {goal}")
     return goals_crud.create_goal(request, db, goal)
 
 @goals_router.put('/goals/{goal_id}', tags=["goals"], dependencies=[Depends(security)])
@@ -68,16 +67,20 @@ async def update_goal(request: Request, goal_id: str, updates: UpdateGoalSchema,
     :param db: Database session
     :return: Result message
     """
+    logger.info(f"Updating goal: {goal_id}")
     goal = goals_crud.get_goal(db, goal_id)
     user_id = request.state.user_id
 
+    logger.info(f"Goal: {goal}")
+
+
     # Verify if the goal exists
-    if not goal:
-        # Verify if the user is the correct one
-        if goal.user_id != user_id:
-            return {"message": "Hey dude, you can't update this goal"}
-        else:
-            return {"message": "Goal not found"}
+    if goal is None:
+        return {"message": "Goal not found"}
+    # Verify if the user is the correct one
+    if str(goal.user_id) != str(user_id):
+        return {"message": "Hey dude, you can't update this goal"}
+
     return goals_crud.update_goal(db, goal_id, updates)
 
 @goals_router.delete("/goals/{goal_id}", tags=["goals"], dependencies=[Depends(security)])
@@ -86,11 +89,11 @@ async def delete_goal(request: Request, goal_id: str, db: Session = Depends(get_
     user_id = request.state.user_id
 
     # Verify if the goal exists
-    if not goal:
-        # Verify if the user is the correct one
-        if goal.user_id != user_id:
-            return {"message": "Hey dude, this goal doesn't belong to you"}
-        else:
-            return {"message": "Goal not found"}
+    if goal is None:
+        return {"message": "Goal not found"}
+    # Verify if the user is the correct one
+    if str(goal.user_id) != str(user_id):
+        return {"message": "Hey dude, this goal doesn't belong to you"}
 
     return goals_crud.delete_goal(db, goal_id)
+

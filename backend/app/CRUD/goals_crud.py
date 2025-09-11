@@ -21,11 +21,13 @@ def create_goal(request: Request, db: Session, goal: CreateGoalSchema) -> dict:
     new_goal = Goals(
         id = str(uuid.uuid4()),
         user_id = user_id,
-        description = goal.description,
-        status = goal.status,
-        eta = goal.eta,
+        title = goal.title,
+        current_level = goal.current_level,
         resources = goal.resources,
-        target_date = goal.target_date
+        target_date = goal.target_date,
+        days_per_week = goal.days_per_week,
+        hours_per_day = goal.hours_per_day,
+        status = goal.status,
     )
     db.add(new_goal)
     db.commit()
@@ -45,11 +47,13 @@ def get_all_goals(db: Session, user_id: str):
     return [
         {
             "id": goal.id,
-            "description": goal.description,
-            "status": goal.status,
-            "eta": goal.eta,
+            "title": goal.title,
+            "current_level": goal.current_level,
             "resources": goal.resources.split(","),
-            "target_date": goal.target_date
+            "target_date": goal.target_date,
+            "days_per_week": goal.days_per_week,
+            "hours_per_day": goal.hours_per_day,
+            "status": goal.status
         }
         for goal in goals
     ]
@@ -77,11 +81,13 @@ def update_goal(db: Session, goal_id: str, update: UpdateGoalSchema) -> dict:
     if not goal:
         return {"message": "Goal not found"}
 
-    goal.description = update.description if update.description else goal.description
-    goal.status = update.status if update.status else goal.status
-    goal.eta = update.eta if update.eta else goal.eta
+    goal.title = update.title if update.title else goal.title
+    goal.current_level = update.current_level if update.current_level else goal.current_level
     goal.resources = update.resources if update.resources else goal.resources
     goal.target_date = update.target_date if update.target_date else goal.target_date
+    goal.days_per_week = update.days_per_week if update.days_per_week else goal.days_per_week
+    goal.hours_per_day = update.hours_per_day if update.hours_per_day else goal.hours_per_day
+    goal.status = update.status if update.status else goal.status
 
     db.commit()
     db.refresh(goal)
