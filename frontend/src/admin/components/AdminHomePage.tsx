@@ -16,9 +16,6 @@ export const AdminHomePage = () => {
     const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [editedUser, setEditedUser] = useState<User | null>(null);
 
-    const [showAddModal, setShowAddModal] = useState(false)
-
-
     const fetchUsers = async () => {
         try {
             const response = await getAllUsers();
@@ -33,11 +30,9 @@ export const AdminHomePage = () => {
     }, []);
 
     const handleAddUser= async (username: string) => {
-        console.log(`Adding user: ${username}`);
         if(addUser) {
             try {
                 const response =  await createUser(addUser);
-                setShowAddModal(false);
                 console.log(`Response: ${response}`);
                 if (response === 200) {
                     await fetchUsers();
@@ -50,7 +45,6 @@ export const AdminHomePage = () => {
     };
 
     const handleUpdateUser = async (username: string) => {
-        console.log(`Updating user: ${username}`);
         if(editedUser){
             try {
                 updateUser(editedUser.id, editedUser);
@@ -92,7 +86,6 @@ export const AdminHomePage = () => {
                                     password: "",
                                     password_confirmation: ""
                                 } as AddUser)
-                                setShowAddModal(true)
                             }}
                         >Add User</NavigationMenu.Link>
                     </NavigationMenu.Item>

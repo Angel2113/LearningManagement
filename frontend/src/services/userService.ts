@@ -22,6 +22,7 @@ export const updateUser = async (id: string, user: Partial<User>): Promise<User>
     return response.data;
 };
 
+// Delete a user
 export const deleteUser = async (id: string): Promise<number> => {
     const response = await instance.delete(`/users/${id}`);
     return response.status;

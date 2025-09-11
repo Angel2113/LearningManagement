@@ -1,5 +1,4 @@
-export type Goal = {
-    id: string;
+export type AddGoal = {
     title: string;
     current_level: string;
     resources: string;
