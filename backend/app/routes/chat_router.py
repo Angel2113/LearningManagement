@@ -69,7 +69,7 @@ async def get_chat(request: Request, goal:CreateGoalSchema):
     if env == "local":
         agent = local_ai(model=model)
     elif env == "remote":
-        agent = local_ai(prompt)
+        agent = remote_ai()
 
     return agent.chat(prompt)
 
