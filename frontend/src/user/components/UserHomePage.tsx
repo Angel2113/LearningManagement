@@ -7,6 +7,7 @@ import {Goal} from "@/types/Goal.ts";
 import {Pencil2Icon, TrashIcon} from "@radix-ui/react-icons";
 import {AddGoal} from "@/types/AddGoal.ts";
 import "react-datepicker/dist/react-datepicker.css";
+import {getAISuggestion} from "@/services/ai_services.tsx";
 
 
 export const UserHomePage = () => {
@@ -86,7 +87,19 @@ export const UserHomePage = () => {
             }
         }
     }
-
+    const [suggestion, setSuggestion] = useState("");
+    const getSuggestion = async () => {
+        if(AddGoal) {
+            try {
+                const response = await getAISuggestion(AddGoal);
+                console.log(`Response: ${response}`);
+                setSuggestion(response.data.reply);
+                // Await fetch response
+            } catch (error) {
+                throw new Error('Error getting suggestions');
+            }
+        }
+    }
     return (
         <>
             <NavigationMenu.Root className="NavigationMenuRoot">
@@ -269,10 +282,13 @@ export const UserHomePage = () => {
                                         </label>
                                     </Flex>
                                     <Flex gap="3" my="2">
-                                        <TextArea placeholder="IA Suggestion" />
+                                        <TextArea placeholder="IA Suggestion">
+                                            {suggestion}
+                                        </TextArea>
                                     </Flex>
                                 </Grid>
                                 <Flex gap="3" justify="end">
+                                    <Button onClick={getSuggestion}>Get Plan</Button>
                                     <Dialog.Close>
                                         <Button variant="soft">Cancel</Button>
                                     </Dialog.Close>

@@ -4,6 +4,7 @@ from fastapi import FastAPI, requests, Response, Header, Depends, HTTPException,
 from app.routes.users_router import users_router
 from app.routes.auth_router import auth_router
 from app.routes.goals_router import goals_router
+from app.routes.chat_router import chat_router
 from fastapi.security import OAuth2PasswordBearer
 from app.CRUD import user_crud
 from app.utils.token_handler import encode_token
@@ -19,6 +20,7 @@ app = FastAPI(
 app.include_router(users_router)
 app.include_router(auth_router)
 app.include_router(goals_router)
+app.include_router(chat_router)
 
 #oauth_scheme = OAuth2PasswordBearer(tokenUrl="get_token")
 app.add_middleware(JWTMiddleware)

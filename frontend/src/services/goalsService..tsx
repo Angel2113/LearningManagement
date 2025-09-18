@@ -1,13 +1,10 @@
-
-
-// Get all the goals
 import instance from "@/services/instance.tsx";
 import {Goal} from "@/types/Goal.ts";
 import {AddGoal} from "@/types/AddGoal.ts";
 
 // Get all goals
 export const getAllGoals = async () => {
-    const response =await  instance.get("goals");
+    const response = await  instance.get("goals");
     return response.data;
 }
 

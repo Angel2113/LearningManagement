@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/routes/chat_router.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/utils/local_ai.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/utils/remote_ai.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/ai_services.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/models/Goals.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Goals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/routes/goals_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/sql/V3__create_Table_Goals.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/admin/components/AdminHomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/goalsService..tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/userService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/userService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/Goal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/Goal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +26,10 @@
       <list>
         <option value="SQL File" />
         <option value="Dockerfile" />
-        <option value="Python Script" />
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -163,7 +158,13 @@
       <workItem from="1757334176489" duration="1297000" />
       <workItem from="1757378260740" duration="20060000" />
       <workItem from="1757503838270" duration="3189000" />
-      <workItem from="1757546078331" duration="5111000" />
+      <workItem from="1757546078331" duration="5832000" />
+      <workItem from="1757633966540" duration="8799000" />
+      <workItem from="1758044888410" duration="624000" />
+      <workItem from="1758049585092" duration="86000" />
+      <workItem from="1758061315601" duration="659000" />
+      <workItem from="1758148711454" duration="8389000" />
+      <workItem from="1758158341262" duration="4125000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
@@ -189,5 +190,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/app/main.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/app/routes/chat_router.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
