@@ -10,6 +10,7 @@ class CreateGoalSchema(BaseModel):
     days_per_week: Optional[int]
     hours_per_day: Optional[int]
     status: Optional[str] = Field(min_length=2, max_length=20)
+    ia_suggestion: Optional[str]
 
 class UpdateGoalSchema(BaseModel):
     title: Optional[str] = Field(min_length=5, max_length=255)

@@ -28,6 +28,7 @@ def create_goal(request: Request, db: Session, goal: CreateGoalSchema) -> dict:
         days_per_week = goal.days_per_week,
         hours_per_day = goal.hours_per_day,
         status = goal.status,
+        ia_suggestion = goal.ia_suggestion
     )
     db.add(new_goal)
     db.commit()

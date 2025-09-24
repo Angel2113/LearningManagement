@@ -22,7 +22,8 @@ export const UserHomePage = () => {
         target_date: "",
         days_per_week: 0,
         hours_per_day: 0,
-        status: "new"
+        status: "new",
+        ia_suggestion: "hello!"
     });
 
     const fetchGoals = async () => {
@@ -87,14 +88,16 @@ export const UserHomePage = () => {
             }
         }
     }
-    const [suggestion, setSuggestion] = useState("");
+
     const getSuggestion = async () => {
         if(AddGoal) {
             try {
-                const response = await getAISuggestion(AddGoal);
-                console.log(`Response: ${response}`);
-                setSuggestion(response.data.reply);
-                // Await fetch response
+                const data = await getAISuggestion(AddGoal);
+                setAddGoal({
+                            ...AddGoal,
+                            ia_suggestion: data,
+                        } as AddGoal)
+                console.log(`Response: ${data}`);
             } catch (error) {
                 throw new Error('Error getting suggestions');
             }
@@ -282,13 +285,20 @@ export const UserHomePage = () => {
                                         </label>
                                     </Flex>
                                     <Flex gap="3" my="2">
-                                        <TextArea placeholder="IA Suggestion">
-                                            {suggestion}
-                                        </TextArea>
+                                        <TextArea
+                                            placeholder="IA Suggestion"
+                                            value={AddGoal?.ia_suggestion}
+                                            onChange={(e) => setAddGoal({
+                                                    ...AddGoal,
+                                                    ia_suggestion: e.target.value,
+                                                } as AddGoal)}
+                                        />
                                     </Flex>
                                 </Grid>
                                 <Flex gap="3" justify="end">
-                                    <Button onClick={getSuggestion}>Get Plan</Button>
+                                    <Button onClick={async () => {
+                                        await getSuggestion();
+                                      }}>Get Plan</Button>
                                     <Dialog.Close>
                                         <Button variant="soft">Cancel</Button>
                                     </Dialog.Close>

@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/db/sql/V4__alter_goals_add_ia_suggestions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/sql/V5__alter_study_session_add_goal_id.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/models/Goals.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Goals.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/chat_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/chat_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/ai_services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/ai_services.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +25,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SQL File" />
         <option value="Dockerfile" />
         <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="Python Script" />
+        <option value="SQL File" />
       </list>
     </option>
   </component>
@@ -56,7 +65,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/Externo/Developer/2025/LearningManagement/frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/Externo/Developer/2025/LearningManagement/db/sql&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,6 +80,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/db/sql" />
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -156,7 +166,11 @@
       <workItem from="1758049585092" duration="86000" />
       <workItem from="1758061315601" duration="659000" />
       <workItem from="1758148711454" duration="8389000" />
-      <workItem from="1758158341262" duration="4604000" />
+      <workItem from="1758158341262" duration="4867000" />
+      <workItem from="1758296943895" duration="5767000" />
+      <workItem from="1758427703764" duration="600000" />
+      <workItem from="1758581047294" duration="11292000" />
+      <workItem from="1758752945098" duration="1081000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
@@ -189,11 +203,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/app/main.py</url>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/app/routes/chat_router.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

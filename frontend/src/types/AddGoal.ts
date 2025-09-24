@@ -6,4 +6,5 @@ export type AddGoal = {
     days_per_week: number;
     hours_per_day: number;
     status: string;
+    ia_suggestion: string;
 }

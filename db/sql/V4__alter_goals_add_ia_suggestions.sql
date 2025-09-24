@@ -1,0 +1,2 @@
+ALTER TABLE Goals
+ADD COLUMN IA_suggestion TEXT;

@@ -1,5 +1,5 @@
 from ..database import Base
-from sqlalchemy import Column, String, DateTime, Date, Integer
+from sqlalchemy import Column, String, DateTime, Date, Integer, Text
 from sqlalchemy.dialects.postgresql import UUID
 from datetime import date
 import uuid
@@ -16,3 +16,4 @@ class Goals(Base):
     hours_per_day = Column(Integer)
     status= Column(String(20), default='new')
     created_at = Column(DateTime, default=date.today())
+    ia_suggestion = Column(Text)

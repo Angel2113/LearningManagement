@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:14.18
+    image: postgres:15
     container_name: postgres_db
     ports:
       - "5432:5432"
@@ -12,6 +12,12 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - app_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
   flyway:
     image: flyway/flyway
     depends_on:
@@ -25,6 +31,7 @@ services:
       - FLYWAY_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - ./db/sql:/flyway/sql
+      - ./db/flyway.conf:/flyway/conf/flyway.conf
     networks:
       - app_network
   api:
@@ -37,6 +44,9 @@ services:
       - "8000:8000"
     volumes:
       - ./backend/app:/app/app
+      - ~/.aws/:/root/.aws:ro
+    environment:
+      - AWS_PROFILE=default
     depends_on:
       - db
     networks:
