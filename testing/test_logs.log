@@ -1,0 +1,17 @@
+2025-10-21 22:21:38,217 - utils.common_functions - INFO - Username Juan0001
+2025-10-21 22:21:38,217 - utils.common_functions - INFO - Password None
+2025-10-21 22:21:38,264 - utils.common_functions - INFO - Failed to login to http://localhost:8000/auth/login
+2025-10-21 22:21:38,264 - utils.common_functions - INFO - Response {'detail': [{'type': 'string_type', 'loc': ['body', 'password'], 'msg': 'Input should be a valid string', 'input': None}]}
+2025-10-21 22:21:38,264 - utils.common_functions - INFO - Status code 422
+2025-10-21 22:21:38,265 - api.test_login - INFO - The token is: None
+2025-10-21 22:21:53,666 - utils.common_functions - INFO - Username Juan0001
+2025-10-21 22:21:53,666 - utils.common_functions - INFO - Password Juan0001
+2025-10-21 22:21:54,070 - api.test_login - INFO - The token is: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTIyVDA0OjUxOjU0LjA0NTY0MiJ9.Q1MriMlepfxAnK7XTmKs313pfWQ6bMX5DedvLqs9tto
+2025-10-21 22:22:39,523 - utils.common_functions - INFO - Username Juan0001
+2025-10-21 22:22:39,523 - utils.common_functions - INFO - Password Juan0001
+2025-10-21 22:25:25,899 - utils.common_functions - INFO - Username Juan0001
+2025-10-21 22:25:25,899 - utils.common_functions - INFO - Password Juan0001
+2025-10-21 22:25:26,201 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTIyVDA0OjU1OjI2LjE5ODU1OCJ9.IzAITVyXfAq5fhkLyxyaCoykqKR8IhHhOf6ZtBKW478', 'token_type': 'bearer'}
+2025-10-21 22:25:26,201 - utils.common_functions - INFO - Status code 200
+2025-10-21 22:25:26,210 - api.test_login - INFO - Response {'detail': 'Invalid username or password'}
+2025-10-21 22:25:26,210 - api.test_login - INFO - Status code 400
