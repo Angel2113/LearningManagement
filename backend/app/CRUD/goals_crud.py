@@ -33,7 +33,7 @@ def create_goal(request: Request, db: Session, goal: CreateGoalSchema) -> dict:
     db.add(new_goal)
     db.commit()
     db.refresh(new_goal)
-    return {"message": "Goal created successfully"}
+    return new_goal
 
 def get_all_goals(db: Session, user_id: str):
     """

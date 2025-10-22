@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/db/sql/V4__alter_goals_add_ia_suggestions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/sql/V5__alter_study_session_add_goal_id.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/CRUD/session_crud.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/schemas/study_session_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/sql/V6__alter_study_session_columns.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/models/Goals.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Goals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/models/Sessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Sessions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/chat_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/chat_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/schemas/goals_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/ai_services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/ai_services.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/types/AddGoal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/goals_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/utils/local_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/local_ai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/instance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +32,8 @@
         <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
-        <option value="Python Script" />
         <option value="SQL File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -170,7 +173,12 @@
       <workItem from="1758296943895" duration="5767000" />
       <workItem from="1758427703764" duration="600000" />
       <workItem from="1758581047294" duration="11292000" />
-      <workItem from="1758752945098" duration="1081000" />
+      <workItem from="1758752945098" duration="8186000" />
+      <workItem from="1758835260790" duration="2622000" />
+      <workItem from="1758843521933" duration="4318000" />
+      <workItem from="1759440247232" duration="10495000" />
+      <workItem from="1760715938035" duration="3330000" />
+      <workItem from="1761089288874" duration="3141000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
@@ -203,6 +211,14 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/app/main.py</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/app/models/Sessions.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/app/CRUD/user_crud.py</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -92,15 +92,17 @@ export const UserHomePage = () => {
     const getSuggestion = async () => {
         if(AddGoal) {
             try {
-                const data = await getAISuggestion(AddGoal);
+                const response = await getAISuggestion(AddGoal);
+                console.log(response);
                 setAddGoal({
                             ...AddGoal,
-                            ia_suggestion: data,
+                            ia_suggestion: response,
                         } as AddGoal)
-                console.log(`Response: ${data}`);
+
             } catch (error) {
                 throw new Error('Error getting suggestions');
             }
+
         }
     }
     return (
@@ -296,9 +298,7 @@ export const UserHomePage = () => {
                                     </Flex>
                                 </Grid>
                                 <Flex gap="3" justify="end">
-                                    <Button onClick={async () => {
-                                        await getSuggestion();
-                                      }}>Get Plan</Button>
+                                        <Button onClick={getSuggestion}>Get Plan</Button>
                                     <Dialog.Close>
                                         <Button variant="soft">Cancel</Button>
                                     </Dialog.Close>

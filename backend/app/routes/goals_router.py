@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, Request
 from typing import Annotated
-from app.CRUD import goals_crud
+from app.CRUD import goals_crud, session_crud
 from app.database import get_db
 from sqlalchemy.orm import Session
 from app.routes.auth_router import get_current_user, security
 from app.schemas.goals_schema import CreateGoalSchema, UpdateGoalSchema
 import logging
+import re
 
 logger = logging.getLogger('uvicorn.error')
 logger.setLevel(logging.DEBUG)
@@ -55,7 +56,34 @@ async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = De
     :return: Result message
     """
     logger.info(f"Creating goal: {goal}")
-    return goals_crud.create_goal(request, db, goal)
+
+    # Create Goal
+    goal = goals_crud.create_goal(request, db, goal)
+    goal_id = goal.id
+    text = goal.ia_suggestion
+
+    #Get Sessions
+    session_pattern = r"### Session \d+: .*"
+    sessions = re.split(session_pattern, text)
+    session_titles = re.findall(session_pattern, text)
+
+    session_list = [
+        {
+            'session_no': i + 1,
+            "title": session_titles[i].strip(),
+            "content": sessions[i + 1].strip()
+        }
+        for i in range(len(session_titles))
+    ]
+    logger.info(f'No. Sessions: {len(session_list)}')
+    logger.info(f'Session List: {session_list}')
+    logger.info(f'Goal id: {goal_id}')
+    if goal:
+        for session in session_list:
+            return {"message": "Goal created successfully"}
+
+
+    return {"message": "Error creating the goal"}
 
 @goals_router.put('/goals/{goal_id}', tags=["goals"], dependencies=[Depends(security)])
 async def update_goal(request: Request, goal_id: str, updates: UpdateGoalSchema, db: Session = Depends(get_db)):

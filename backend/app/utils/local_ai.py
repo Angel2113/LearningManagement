@@ -1,6 +1,6 @@
 from ollama import Client
 
-OLLAMA_URL = "http://192.168.0.26:11434"
+OLLAMA_URL = "http://192.168.0.28:11434"
 
 class AIClient:
 
