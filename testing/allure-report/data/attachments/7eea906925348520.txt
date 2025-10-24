@@ -1,0 +1,3 @@
+[32mINFO    [0m api.test_users:test_users.py:61 Payload {'username': 'hBToZZnQgbk', 'email': 'petersroger@example.com', 'password': 'aPLLMzTpF', 'password_confirmation': 'aPLLMzTpF', 'role': 'user'}
+[32mINFO    [0m api.test_users:test_users.py:62 Response {'message': 'User created successfully'}
+[32mINFO    [0m api.test_users:test_users.py:63 Status code 200

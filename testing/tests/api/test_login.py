@@ -4,7 +4,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
 @pytest.mark.api
 @pytest.mark.login
 def test_valid_login():
@@ -12,7 +11,7 @@ def test_valid_login():
     Valid loggin test
     :return:
     """
-    token = pytest.bearer
+    token = pytest.admin_bearer
     assert token is not None
 
 @pytest.mark.api

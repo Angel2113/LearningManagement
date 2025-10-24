@@ -1,0 +1,4 @@
+2025-10-23 22:32:09,737 - api.test_users - INFO - Delete user
+2025-10-23 22:32:09,737 - api.test_users - INFO - URL http://localhost:8000/users/8d745421-4e1d-44c6-b3d9-da576384a370
+2025-10-23 22:32:09,737 - api.test_users - INFO - Status code 200
+2025-10-23 22:32:09,737 - api.test_users - INFO - Response {'message': 'User deleted successfully'}

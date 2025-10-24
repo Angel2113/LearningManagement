@@ -1,0 +1,21 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+Valid loggin test
+:return:
+","0","test_valid_login","tests.api","2025-10-23","passed","2025-10-23","","test_login","",""
+"","12","test_create_goal","tests.api","2025-10-23","passed","2025-10-23","","test_goals","",""
+"","6","test_read_all_users","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"","4","test_invalid_login","tests.api","2025-10-23","passed","2025-10-23","","test_login","",""
+"","8","test_delete_users","tests.api","2025-10-23","passed","2025-10-23","","test_goals","",""
+"","14","test_read_goal","tests.api","2025-10-23","passed","2025-10-23","","test_goals","",""
+"","7","test_delete_users","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"","5","test_read_all_goals","tests.api","2025-10-23","passed","2025-10-23","","test_goals","",""
+"","4","test_read_users","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"","12","test_put_users","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"","224","test_create_user","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"
+Register a user without login
+:return:
+","245","test_register_user","tests.api","2025-10-23","passed","2025-10-23","","test_users","",""
+"","166871","test_post_chat","tests.api","2025-10-23","passed","2025-10-23","","test_chat","",""
+"","16","test_put_goal","tests.api","2025-10-23","passed","2025-10-23","","test_goals","",""

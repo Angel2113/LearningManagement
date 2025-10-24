@@ -22,14 +22,14 @@ def load_urls() -> dict:
     return data
 
 
-def get_token() -> str:
+def get_token(user: str = None) -> str:
     """
         Get jwt token
     """
     urls = load_urls()
     login_url = urls['api_login']
-    username = os.getenv('admin_user')
-    password = os.getenv('admin_password')
+    username = os.getenv(f'{user}_user')
+    password = os.getenv(f'{user}_password')
     logger.info(f'Username {username}')
     logger.info(f'Password {password}')
 

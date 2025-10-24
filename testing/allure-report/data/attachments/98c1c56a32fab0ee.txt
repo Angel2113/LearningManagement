@@ -1,0 +1,5 @@
+[32mINFO    [0m api.test_users:test_users.py:165 Updating user
+[32mINFO    [0m api.test_users:test_users.py:166 URL http://localhost:8000/users/8d745421-4e1d-44c6-b3d9-da576384a370
+[32mINFO    [0m api.test_users:test_users.py:167 Payload {'email': 'fmcdaniel@example.com'}
+[32mINFO    [0m api.test_users:test_users.py:168 Status code 200
+[32mINFO    [0m api.test_users:test_users.py:169 Response {'message': 'User updated successfully'}

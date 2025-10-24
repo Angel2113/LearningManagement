@@ -1,3 +1,7 @@
 {
-  "api_login": "http://localhost:8000/auth/login"
+  "api_login": "http://localhost:8000/auth/login",
+  "api_register": "http://localhost:8000/register",
+  "api_users": "http://localhost:8000/users",
+  "api_chat": "http://localhost:8000/chat",
+  "api_goals": "http://localhost:8000/goals"
 }

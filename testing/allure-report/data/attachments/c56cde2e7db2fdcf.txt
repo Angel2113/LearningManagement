@@ -1,0 +1,2 @@
+[32mINFO    [0m api.test_login:test_login.py:36 Response {'detail': 'Invalid username or password'}
+[32mINFO    [0m api.test_login:test_login.py:37 Status code 400

@@ -1,0 +1,7 @@
+[32mINFO    [0m api.test_goals:test_goals.py:42 Get all Goals URL http://localhost:8000/goals
+[32mINFO    [0m api.test_goals:test_goals.py:43 Get all Goals [{'id': '31b25105-5c5f-4f40-9869-0477c13ac00d', 'title': 'how to do testing', 'current_level': 'basic', 'resources': ['books', ' youtube', ' google'], 'target_date': '2025-10-24', 'days_per_week': 5, 'hours_per_day': 2, 'status': 'active'}, {'id': 'd867fbac-9908-46d9-86aa-c7aca8c8b472', 'title': 'Update', 'current_level': 'inter', 'resources': ['Books', ' Youtube'], 'target_date': '2027-10-24', 'days_per_week': 3, 'hours_per_day': 3, 'status': 'active'}, {'id': '27023c05-6ea2-4fb9-9ccd-a858c6d5d8b8', 'title': 'how to do testing', 'current_level': 'basic', 'resources': ['books', ' youtube', ' google'], 'target_date': '2025-10-24', 'days_per_week': 5, 'hours_per_day': 2, 'status': 'active'}]
+[32mINFO    [0m api.test_goals:test_goals.py:159 Updating Goal
+[32mINFO    [0m api.test_goals:test_goals.py:160 URL http://localhost:8000/goals/31b25105-5c5f-4f40-9869-0477c13ac00d
+[32mINFO    [0m api.test_goals:test_goals.py:161 Payload {'title': 'Update', 'current_level': 'inter', 'resources': 'Books, Youtube', 'target_date': '2027-10-24', 'days_per_week': 3, 'hours_per_day': 3, 'status': 'active'}
+[32mINFO    [0m api.test_goals:test_goals.py:162 Status code 200
+[32mINFO    [0m api.test_goals:test_goals.py:163 Response {'message': 'Goal updated successfully'}

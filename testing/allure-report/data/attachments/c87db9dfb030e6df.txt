@@ -1,0 +1,3 @@
+[32mINFO    [0m api.test_goals:test_goals.py:84 Payload {'title': 'how to do testing', 'current_level': 'basic', 'resources': 'books, youtube, google', 'target_date': '2025-10-24', 'days_per_week': 5, 'hours_per_day': 2, 'status': 'active', 'ia_suggestion': ''}
+[32mINFO    [0m api.test_goals:test_goals.py:85 Response {'message': 'Goal created successfully'}
+[32mINFO    [0m api.test_goals:test_goals.py:86 Status code 200

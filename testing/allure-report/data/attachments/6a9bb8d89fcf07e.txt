@@ -1,0 +1,4 @@
+[32mINFO    [0m api.test_users:test_users.py:194 Delete user
+[32mINFO    [0m api.test_users:test_users.py:195 URL http://localhost:8000/users/8d745421-4e1d-44c6-b3d9-da576384a370
+[32mINFO    [0m api.test_users:test_users.py:196 Status code 200
+[32mINFO    [0m api.test_users:test_users.py:197 Response {'message': 'User deleted successfully'}

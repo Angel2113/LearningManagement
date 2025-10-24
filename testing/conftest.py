@@ -18,7 +18,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 @pytest.fixture(scope='session', autouse=True)
-def setup_session(playwright: Playwright):
-    x = get_token()
-    pytest.bearer = x if x else None
-    pytest.urls = load_urls()
+def api_session():
+    admin_token = get_token('admin')
+    tester_token = get_token('testing')
+    urls = load_urls()
+
+    if not admin_token or not tester_token:
+        raise RuntimeError("Failed to fetch tokens for admin or tester roles.")
+
+    if not urls:
+        raise RuntimeError("Failed to load URLs.")
+
+    pytest.admin_bearer = admin_token
+    pytest.tester_bearer = tester_token
+    pytest.urls = urls
