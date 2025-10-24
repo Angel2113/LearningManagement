@@ -38,3 +38,7 @@ frontend/*.local
 
 # General
 .env
+
+# Testing
+testing/.venv
+allure-results/

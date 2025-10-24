@@ -5,20 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3234d9f-78c7-4c18-a86d-22749047fffa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/app/CRUD/session_crud.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/schemas/study_session_schema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/sql/V6__alter_study_session_columns.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/tests/api/test_chat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/tests/api/test_goals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testing/tests/api/test_users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/CRUD/goals_crud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/models/Sessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/models/Sessions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/routes/chat_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/chat_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/routes/goals_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/goals_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/utils/local_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/utils/local_ai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/register/components/RegisterPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/instance.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/instance.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/user/components/UserHomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/routes/users_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/routes/users_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/testing/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testing/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/testing/test_logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/tests/api/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/tests/api/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/utils/common_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/utils/common_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/utils/urls.json" beforeDir="false" afterPath="$PROJECT_DIR$/testing/utils/urls.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;adding__testing&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Volumes/Externo/Developer/2025/LearningManagement/db/sql&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -87,11 +87,11 @@
       <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testing/utils" />
       <recent name="$PROJECT_DIR$/backend/app/schemas" />
       <recent name="$PROJECT_DIR$/frontend/src/admin/components" />
       <recent name="$PROJECT_DIR$/backend/app" />
       <recent name="$PROJECT_DIR$/backend/app/models" />
-      <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -178,7 +178,9 @@
       <workItem from="1758843521933" duration="4318000" />
       <workItem from="1759440247232" duration="10495000" />
       <workItem from="1760715938035" duration="3330000" />
-      <workItem from="1761089288874" duration="3141000" />
+      <workItem from="1761089288874" duration="10942000" />
+      <workItem from="1761177017739" duration="5320000" />
+      <workItem from="1761268673112" duration="7325000" />
     </task>
     <task id="LOCAL-00001">
       <option name="closed" value="true" />
@@ -219,6 +221,11 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/app/CRUD/user_crud.py</url>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/testing/tests/api/test_goals.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

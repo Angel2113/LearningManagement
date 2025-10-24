@@ -15,14 +15,15 @@ users_router = APIRouter()
 user_depencency = Annotated[dict, Depends(get_current_user)]
 
 @users_router.get("/users/{username}", tags=["Users"], dependencies=[Depends(security)])
-async def get_user(username: user_depencency, db: Session = Depends(get_db)):
+async def get_user(username: str, db: Session = Depends(get_db)):
     """
     Get user by username (READ)
     :param username: Username
     :param db: Database session
     :return: return the user
     """
-    user = user_crud.get_user(db = db, username=username['username'])
+    logger.info(f'Looking for user {username}')
+    user = user_crud.get_user(db = db, username=username)
     if user:
         return user
     else:

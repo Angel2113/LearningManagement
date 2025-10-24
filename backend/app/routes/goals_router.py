@@ -62,6 +62,7 @@ async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = De
     goal_id = goal.id
     text = goal.ia_suggestion
 
+    '''
     #Get Sessions
     session_pattern = r"### Session \d+: .*"
     sessions = re.split(session_pattern, text)
@@ -78,9 +79,9 @@ async def create_goal(request: Request, goal: CreateGoalSchema, db: Session = De
     logger.info(f'No. Sessions: {len(session_list)}')
     logger.info(f'Session List: {session_list}')
     logger.info(f'Goal id: {goal_id}')
+    '''
     if goal:
-        for session in session_list:
-            return {"message": "Goal created successfully"}
+        return {"message": "Goal created successfully"}
 
 
     return {"message": "Error creating the goal"}
