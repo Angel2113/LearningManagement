@@ -42,3 +42,5 @@ frontend/*.local
 # Testing
 testing/.venv
 allure-results/
+
+.idea/*
