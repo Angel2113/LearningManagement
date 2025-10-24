@@ -422,3 +422,75 @@
 2025-10-23 22:32:09,737 - api.test_users - INFO - URL http://localhost:8000/users/8d745421-4e1d-44c6-b3d9-da576384a370
 2025-10-23 22:32:09,737 - api.test_users - INFO - Status code 200
 2025-10-23 22:32:09,737 - api.test_users - INFO - Response {'message': 'User deleted successfully'}
+2025-10-23 23:19:10,066 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:19:10,067 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:19:10,394 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA1OjQ5OjEwLjM4NzYwMCJ9.dBvAe4uHanJTHOoXa_ao_EMjl8Kblu-qi6Te6IJoL_A', 'token_type': 'bearer'}
+2025-10-23 23:19:10,394 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:19:10,395 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:19:10,395 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:19:10,627 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDU6NDk6MTAuNjI0MDQwIn0.h6eGRblz1bk8DglJd2SIxq4fknbB_GEa5LaMibnLyiI', 'token_type': 'bearer'}
+2025-10-23 23:19:10,627 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:20:04,293 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:20:04,293 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:20:04,570 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA1OjUwOjA0LjU2Njc3OCJ9.6y1zHV0gdlQbWvMzuZd1FsA_KbQx7zMsAmo25Z7fkGM', 'token_type': 'bearer'}
+2025-10-23 23:20:04,571 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:20:04,571 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:20:04,572 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:20:04,795 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDU6NTA6MDQuNzkyNzU0In0.31wAvEaiSyDLucYu8W9FlLsDihhjisq21upieJ_BxVk', 'token_type': 'bearer'}
+2025-10-23 23:20:04,795 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:20:14,251 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:20:14,251 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:20:14,527 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA1OjUwOjE0LjUyMzE4NSJ9.0KCBoIgeD_ipvRAwYvznJ6eAx91-6VQiPYnkPtz8DOs', 'token_type': 'bearer'}
+2025-10-23 23:20:14,527 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:20:14,528 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:20:14,528 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:20:14,759 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDU6NTA6MTQuNzU2Mzc0In0.r7ZDwGNaFxzU6TDjLbxt-DTz2ZDmkKMZBgXwgUqqKqU', 'token_type': 'bearer'}
+2025-10-23 23:20:14,759 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:30:16,944 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:30:16,944 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:30:17,225 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjAwOjE3LjIyMTc5MiJ9.FszGqrnv4OYwDJpYR054riBlnrWoSZVl30kbwWJE8Co', 'token_type': 'bearer'}
+2025-10-23 23:30:17,226 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:30:17,226 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:30:17,227 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:30:17,459 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDA6MTcuNDU2ODkwIn0.H8dGRXSiGrzMW6vS5M5em-dzFzO6VG8Ot3Y6B1oxwoM', 'token_type': 'bearer'}
+2025-10-23 23:30:17,460 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:32:32,271 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:32:32,271 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:32:32,564 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjAyOjMyLjU2MDY5NiJ9.IRXz2QG9WOzxs5KNaCIOTEd3TAT-w679VRC3xQow6vU', 'token_type': 'bearer'}
+2025-10-23 23:32:32,564 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:32:32,565 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:32:32,565 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:32:32,788 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDI6MzIuNzg1MjUyIn0.8wEH3iLsJXHzvL6KvZ6Rq0yVNAidLJAeTPbal9rlSo0', 'token_type': 'bearer'}
+2025-10-23 23:32:32,788 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:33:10,334 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:33:10,335 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:33:10,616 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjAzOjEwLjYxMDIzMSJ9.WpwvYiRoZ_g0iEe2qzAJs0OQE5pTAxTu2C4G0kS0eoI', 'token_type': 'bearer'}
+2025-10-23 23:33:10,616 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:33:10,617 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:33:10,617 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:33:10,843 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDM6MTAuODM4NjMxIn0.3eeUiZgxBZUsIzsrT7cZO5s_wyGdGmTgnkyPzKLvrdA', 'token_type': 'bearer'}
+2025-10-23 23:33:10,843 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:33:34,707 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:33:34,707 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:33:34,981 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjAzOjM0Ljk3MzI1NyJ9.rumC6eWDxPehacDZpZIjtDvNamXndWp7xl8fWKSHShU', 'token_type': 'bearer'}
+2025-10-23 23:33:34,981 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:33:34,982 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:33:34,982 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:33:35,214 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDM6MzUuMjA3ODcwIn0.YeR4xQgHatvYDXccM-U3pgbJ2I_983VevrnA-isg0jg', 'token_type': 'bearer'}
+2025-10-23 23:33:35,214 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:35:18,436 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:35:18,437 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:35:18,710 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjA1OjE4LjcwNjgzNSJ9.Wrbv6RhM5KJimdSA5i0w2GREY1MDT7w3C3w77BkYdRc', 'token_type': 'bearer'}
+2025-10-23 23:35:18,711 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:35:18,712 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:35:18,712 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:35:18,933 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDU6MTguOTMxMjk1In0.vaEDFjDOoDSDgJJocPNzMnbJG53aVkaUmPKuwKVdnuw', 'token_type': 'bearer'}
+2025-10-23 23:35:18,934 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:35:54,195 - utils.common_functions - INFO - Username Juan0001
+2025-10-23 23:35:54,195 - utils.common_functions - INFO - Password Juan0001
+2025-10-23 23:35:54,492 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiM2U4MDFiNjQtZjE4ZC00YmQ2LWIwY2UtZGExODFkNzYyOTNjIiwidXNlcm5hbWUiOiJKdWFuMDAwMSIsImVtYWlsIjoianVhbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cGlyYXRpb24iOiIyMDI1LTEwLTI0VDA2OjA1OjU0LjQ4NTMxMCJ9.nEOLpgs_FE6ELHgkzPqhb8AXX27wlyZtEiGRs_5rrqk', 'token_type': 'bearer'}
+2025-10-23 23:35:54,492 - utils.common_functions - INFO - Status code 200
+2025-10-23 23:35:54,492 - utils.common_functions - INFO - Username Tester001
+2025-10-23 23:35:54,492 - utils.common_functions - INFO - Password Tester001
+2025-10-23 23:35:54,715 - utils.common_functions - INFO - Response {'access_token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRiMzMzODgtOWFhMS00ZjgyLTljN2MtZjU1MjRmM2FkNDlhIiwidXNlcm5hbWUiOiJUZXN0ZXIwMDEiLCJlbWFpbCI6IlRlc3RlcjAwMUBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwaXJhdGlvbiI6IjIwMjUtMTAtMjRUMDY6MDU6NTQuNzEzMTYzIn0.TSEYoGPSqAiPghn1DOIi0DSy25ZDemI-JvWfCK32Rks', 'token_type': 'bearer'}
+2025-10-23 23:35:54,715 - utils.common_functions - INFO - Status code 200

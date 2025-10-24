@@ -32,3 +32,23 @@ def api_session():
     pytest.admin_bearer = admin_token
     pytest.tester_bearer = tester_token
     pytest.urls = urls
+
+@pytest.fixture(scope='session', autouse=True)
+def setup_session(playwright: Playwright):
+
+    width = int(os.environ.get('WINDOW_WIDTH', 1920))
+    height = int(os.environ.get('WINDOW_HEIGHT', 1080))
+
+    # Init Bearer
+    browser = playwright.chromium.launch(
+        headless=False,
+        args=[f'--window-size={width},{height}']
+    )
+
+    context = browser.new_context(viewport=None)
+
+    yield context
+
+    # Close browser
+    context.close()
+    browser.close()

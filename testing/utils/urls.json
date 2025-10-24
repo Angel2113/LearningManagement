@@ -3,5 +3,6 @@
   "api_register": "http://localhost:8000/register",
   "api_users": "http://localhost:8000/users",
   "api_chat": "http://localhost:8000/chat",
-  "api_goals": "http://localhost:8000/goals"
+  "api_goals": "http://localhost:8000/goals",
+  "home_page": "http://localhost:5173/login"
 }
